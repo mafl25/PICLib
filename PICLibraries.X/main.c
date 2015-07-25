@@ -8,10 +8,11 @@
 #include <xc.h>
 #include "encoding.h"
 #include "serial.h"
+#include "spi.h"
 
 int main() {
     
-    while (1);
+    spi_peek_receive(false, 0);
     
     return (0);
 }

@@ -27,30 +27,72 @@
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"12 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\main.c
+"13 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\main.c
 [v _main main `(i  1 e 2 0 ]
 "52 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial.c
 [v _serial_get_byte serial_get_byte `(uc  1 e 1 0 ]
 "75
 [v _serial_send_byte serial_send_byte `(v  1 e 0 0 ]
-[s S35 . 1 `uc 1 ANSELH 1 0 :4:0 
+"30 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\spi.c
+[v _spi_send_get_byte spi_send_get_byte `(uc  1 e 1 0 ]
+"42
+[v _spi_peek_receive spi_peek_receive `(uc  1 e 1 0 ]
+"106
+[v _spi_slave_get_byte spi_slave_get_byte `(uc  1 e 1 0 ]
+[s S42 . 1 `uc 1 ANSELH 1 0 :4:0 
 ]
 "896 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f13k22.h
-[s S37 . 1 `uc 1 ANS8 1 0 :1:0 
+[s S44 . 1 `uc 1 ANS8 1 0 :1:0 
 `uc 1 ANS9 1 0 :1:1 
 `uc 1 ANS10 1 0 :1:2 
 `uc 1 ANS11 1 0 :1:3 
 ]
-[s S42 . 1 `uc 1 ANSEL8 1 0 :1:0 
+[s S49 . 1 `uc 1 ANSEL8 1 0 :1:0 
 `uc 1 ANSEL9 1 0 :1:1 
 `uc 1 ANSEL10 1 0 :1:2 
 `uc 1 ANSEL11 1 0 :1:3 
 ]
-[u S47 . 1 `S35 1 . 1 0 `S37 1 . 1 0 `S42 1 . 1 0 ]
-[v _ANSELHbits ANSELHbits `VES47  1 e 1 @3967 ]
+[u S54 . 1 `S42 1 . 1 0 `S44 1 . 1 0 `S49 1 . 1 0 ]
+[v _ANSELHbits ANSELHbits `VES54  1 e 1 @3967 ]
+[s S260 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"2147
+[s S266 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+[u S272 . 1 `S260 1 . 1 0 `S266 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES272  1 e 1 @3987 ]
+[s S192 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"2282
+[s S201 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S210 . 1 `S192 1 . 1 0 `S201 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES210  1 e 1 @3988 ]
 "3077
 [v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
-[s S76 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S83 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -60,22 +102,22 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "3118
-[s S85 . 1 `uc 1 . 1 0 :3:0 
+[s S92 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 ADEN 1 0 :1:3 
 ]
-[s S88 . 1 `uc 1 . 1 0 :5:0 
+[s S95 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[s S91 . 1 `uc 1 . 1 0 :6:0 
+[s S98 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S94 . 1 `uc 1 . 1 0 :6:0 
+[s S101 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S97 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S104 . 1 `uc 1 RCD8 1 0 :1:0 
 ]
-[u S99 . 1 `S76 1 . 1 0 `S85 1 . 1 0 `S88 1 . 1 0 `S91 1 . 1 0 `S94 1 . 1 0 `S97 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES99  1 e 1 @4011 ]
+[u S106 . 1 `S83 1 . 1 0 `S92 1 . 1 0 `S95 1 . 1 0 `S98 1 . 1 0 `S101 1 . 1 0 `S104 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES106  1 e 1 @4011 ]
 "3286
 [v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
 "3583
@@ -88,21 +130,122 @@
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @4016 ]
 "3898
 [v _BAUDCON BAUDCON `VEuc  1 e 1 @4024 ]
+"4841
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
+[s S234 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"4861
+[s S240 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S245 . 1 `S234 1 . 1 0 `S240 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES245  1 e 1 @4038 ]
+"4910
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
+[s S288 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W 1 0 :1:2 
+]
+"4997
+[s S291 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A 1 0 :1:5 
+]
+[s S294 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+[s S303 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S308 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 A 1 0 :1:5 
+]
+[s S313 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S318 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S323 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE 1 0 :1:2 
+]
+[s S326 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS 1 0 :1:5 
+]
+[s S329 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S334 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 DA 1 0 :1:5 
+]
+[s S337 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+]
+[s S340 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 START 1 0 :1:3 
+]
+[s S343 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 STOP 1 0 :1:4 
+]
+[s S346 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_W 1 0 :1:2 
+]
+[s S349 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_A 1 0 :1:5 
+]
+[u S352 . 1 `S288 1 . 1 0 `S291 1 . 1 0 `S294 1 . 1 0 `S303 1 . 1 0 `S308 1 . 1 0 `S313 1 . 1 0 `S318 1 . 1 0 `S323 1 . 1 0 `S326 1 . 1 0 `S329 1 . 1 0 `S334 1 . 1 0 `S337 1 . 1 0 `S340 1 . 1 0 `S343 1 . 1 0 `S346 1 . 1 0 `S349 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES352  1 e 1 @4039 ]
+"5147
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
 "6242
 [v _INTCON INTCON `VEuc  1 e 1 @4082 ]
 "7325
 [v _RCIE RCIE `VEb  1 e 0 @31981 ]
 "7327
 [v _RCIF RCIF `VEb  1 e 0 @31989 ]
+"7451
+[v _SSPIF SSPIF `VEb  1 e 0 @31987 ]
 "7659
 [v _TXIE TXIE `VEb  1 e 0 @31980 ]
 "7661
 [v _TXIF TXIF `VEb  1 e 0 @31988 ]
-[s S30 interrupt_serial 6 `uc 1 tx_int_enable 1 0 `*.2uc 1 data 3 1 `c 1 length 1 4 `c 1 position 1 5 ]
+[s S37 interrupt_serial 6 `uc 1 tx_int_enable 1 0 `*.2uc 1 data 3 1 `c 1 length 1 4 `c 1 position 1 5 ]
 "11 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial.c
-[v _interrupt_data interrupt_data `S30  1 s 6 interrupt_data ]
-"12 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\main.c
+[v _interrupt_data interrupt_data `S37  1 s 6 interrupt_data ]
+"9 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\spi.c
+[v _dummy_byte dummy_byte `uc  1 s 1 dummy_byte ]
+"13 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"17
+"18
+} 0
+"42 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\spi.c
+[v _spi_peek_receive spi_peek_receive `(uc  1 e 1 0 ]
+{
+[v spi_peek_receive@get_byte get_byte `uc  1 a 1 wreg ]
+[v spi_peek_receive@get_byte get_byte `uc  1 a 1 wreg ]
+[v spi_peek_receive@byte byte `*.2uc  1 p 2 0 ]
+"44
+[v spi_peek_receive@get_byte get_byte `uc  1 a 1 2 ]
+"54
 } 0

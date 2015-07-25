@@ -1,7 +1,112 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[p mainexit ]
-"33 spi.h
-[v _spi_peek_receive `(uc ~T0 @X0 0 ef2`uc`*uc ]
+"2261 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f13k22.h
+[s S120 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S120 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"2271
+[s S121 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S121 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"2260
+[u S119 `S120 1 `S121 1 ]
+[n S119 . . . ]
+"2282
+[v _TRISCbits `VS119 ~T0 @X0 0 e@3988 ]
+"4910
+[v _SSPSTAT `Vuc ~T0 @X0 0 e@4039 ]
+"4841
+[v _SSPCON1 `Vuc ~T0 @X0 0 e@4038 ]
+"4847
+[s S255 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S255 . SSPM CKP SSPEN SSPOV WCOL ]
+"4854
+[s S256 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S256 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"4846
+[u S254 `S255 1 `S256 1 ]
+[n S254 . . . ]
+"4861
+[v _SSPCON1bits `VS254 ~T0 @X0 0 e@4038 ]
+"2132
+[s S114 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S114 . . TRISB4 TRISB5 TRISB6 TRISB7 ]
+"2139
+[s S115 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S115 . . RB4 RB5 RB6 RB7 ]
+"2131
+[u S113 `S114 1 `S115 1 ]
+[n S113 . . . ]
+"2147
+[v _TRISBbits `VS113 ~T0 @X0 0 e@3987 ]
+"4916
+[s S258 :2 `uc 1 :1 `uc 1 ]
+[n S258 . . R_NOT_W ]
+"4920
+[s S259 :5 `uc 1 :1 `uc 1 ]
+[n S259 . . D_NOT_A ]
+"4924
+[s S260 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S260 . BF UA R_nW S P D_nA CKE SMP ]
+"4934
+[s S261 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S261 . . R . D ]
+"4940
+[s S262 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S262 . . W . A ]
+"4946
+[s S263 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S263 . . nW . nA ]
+"4952
+[s S264 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S264 . . R_W . D_A ]
+"4958
+[s S265 :2 `uc 1 :1 `uc 1 ]
+[n S265 . . NOT_WRITE ]
+"4962
+[s S266 :5 `uc 1 :1 `uc 1 ]
+[n S266 . . NOT_ADDRESS ]
+"4966
+[s S267 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S267 . . nWRITE . nADDRESS ]
+"4972
+[s S268 :5 `uc 1 :1 `uc 1 ]
+[n S268 . . DA ]
+"4976
+[s S269 :2 `uc 1 :1 `uc 1 ]
+[n S269 . . RW ]
+"4980
+[s S270 :3 `uc 1 :1 `uc 1 ]
+[n S270 . . START ]
+"4984
+[s S271 :4 `uc 1 :1 `uc 1 ]
+[n S271 . . STOP ]
+"4988
+[s S272 :2 `uc 1 :1 `uc 1 ]
+[n S272 . . NOT_W ]
+"4992
+[s S273 :5 `uc 1 :1 `uc 1 ]
+[n S273 . . NOT_A ]
+"4915
+[u S257 `S258 1 `S259 1 `S260 1 `S261 1 `S262 1 `S263 1 `S264 1 `S265 1 `S266 1 `S267 1 `S268 1 `S269 1 `S270 1 `S271 1 `S272 1 `S273 1 ]
+[n S257 . . . . . . . . . . . . . . . . . ]
+"4997
+[v _SSPSTATbits `VS257 ~T0 @X0 0 e@4039 ]
+"880
+[s S39 :4 `uc 1 ]
+[n S39 . ANSELH ]
+"883
+[s S40 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S40 . ANS8 ANS9 ANS10 ANS11 ]
+"889
+[s S41 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S41 . ANSEL8 ANSEL9 ANSEL10 ANSEL11 ]
+"879
+[u S38 `S39 1 `S40 1 `S41 1 ]
+[n S38 . . . . ]
+"896
+[v _ANSELHbits `VS38 ~T0 @X0 0 e@3967 ]
+"5147
+[v _SSPBUF `Vuc ~T0 @X0 0 e@4041 ]
+"7451
+[v _SSPIF `Vb ~T0 @X0 0 e@31987 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f13k22.h: 49: extern volatile unsigned char SRCON0 @ 0xF68;
@@ -3555,22 +3660,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;encoding.h: 36: void encode_data(uint8_t data, uint8_t *byte_1, uint8_t *byte_2);
-[; ;encoding.h: 43: int8_t decode_data(uint8_t *data, uint8_t byte_1, uint8_t byte_2);
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;serial.h: 92: void setup_serial(uint8_t register_1, uint8_t register_2, uint8_t register_3,
-[; ;serial.h: 93: uint16_t baudrate_value);
-[; ;serial.h: 101: void setup_simple_serial(uint8_t baudrate_bits, uint16_t baudrate_value);
-[; ;serial.h: 109: bool serial_peek_receive(bool get_byte, uint8_t *byte);
-[; ;serial.h: 115: uint8_t serial_get_byte(void);
-[; ;serial.h: 123: int8_t serial_get_data(uint8_t *data, int8_t size);
-[; ;serial.h: 129: void serial_send_byte(uint8_t byte);
-[; ;serial.h: 136: int8_t serial_send_data(uint8_t *data, int8_t size);
-[; ;serial.h: 144: void serial_interrupts(uint8_t interrupts);
-[; ;serial.h: 153: void serial_disable_interrupts(uint8_t interrupts, bool all_interrupts);
-[; ;serial.h: 161: void serial_load_buffer(uint8_t *buffer, int8_t size);
-[; ;serial.h: 168: int8_t serial_send_buffer(void);
-[; ;serial.h: 177: uint8_t serial_receive_error(bool clear);
 [; ;spi.h: 28: void setup_spi(uint8_t register_1, uint8_t register_2);
 [; ;spi.h: 31: uint8_t spi_send_get_byte(uint8_t byte);
 [; ;spi.h: 32: void spi_send_byte(uint8_t byte);
@@ -3581,20 +3671,470 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;spi.h: 39: uint8_t spi_get_dummy_byte(void);
 [; ;spi.h: 42: uint8_t spi_slave_get_byte(void);
 [; ;spi.h: 43: uint8_t spi_slave_get_data(uint8_t *data, int8_t size);
-"13 main.c
-[v _main `(i ~T0 @X0 1 ef ]
+"9 spi.c
+[v _dummy_byte `uc ~T0 @X0 1 s ]
+[; ;spi.c: 9: static uint8_t dummy_byte;
+"11
+[v _setup_spi `(v ~T0 @X0 1 ef2`uc`uc ]
+"12
 {
-[; ;main.c: 13: int main() {
-[e :U _main ]
+[; ;spi.c: 11: void setup_spi(uint8_t SSPSTAT_reg, uint8_t SSPCON1_reg)
+[; ;spi.c: 12: {
+[e :U _setup_spi ]
+"11
+[v _SSPSTAT_reg `uc ~T0 @X0 1 r1 ]
+[v _SSPCON1_reg `uc ~T0 @X0 1 r2 ]
+"12
 [f ]
-[; ;main.c: 15: spi_peek_receive(0, 0);
+[; ;spi.c: 13: TRISCbits.RC7 = 0;
+"13
+[e = . . _TRISCbits 1 7 -> -> 0 `i `uc ]
+[; ;spi.c: 15: SSPSTAT = SSPSTAT_reg;
 "15
-[e ( _spi_peek_receive (2 , -> -> 0 `i `uc -> -> 0 `i `*uc ]
-[; ;main.c: 17: return (0);
-"17
-[e ) -> 0 `i ]
-[e $UE 373  ]
-[; ;main.c: 18: }
+[e = _SSPSTAT _SSPSTAT_reg ]
+[; ;spi.c: 16: SSPCON1 = SSPCON1_reg;
+"16
+[e = _SSPCON1 _SSPCON1_reg ]
+[; ;spi.c: 18: if (SSPCON1bits.SSPM == 0x05 || SSPCON1bits.SSPM == 0x04) {
 "18
+[e $ ! || == -> . . _SSPCON1bits 0 0 `i -> 5 `i == -> . . _SSPCON1bits 0 0 `i -> 4 `i 374  ]
+{
+[; ;spi.c: 19: TRISBbits.RB6 = 1;
+"19
+[e = . . _TRISBbits 1 3 -> -> 1 `i `uc ]
+[; ;spi.c: 20: if (SSPCON1bits.SSPM == 0x04)
+"20
+[e $ ! == -> . . _SSPCON1bits 0 0 `i -> 4 `i 375  ]
+[; ;spi.c: 21: TRISCbits.RC6 = 1;
+"21
+[e = . . _TRISCbits 1 6 -> -> 1 `i `uc ]
+[e :U 375 ]
+[; ;spi.c: 22: SSPSTATbits.CKE = 0;
+"22
+[e = . . _SSPSTATbits 2 6 -> -> 0 `i `uc ]
+"23
+}
+[; ;spi.c: 23: } else {
+[e $U 376  ]
+[e :U 374 ]
+{
+[; ;spi.c: 24: TRISBbits.RB6 = 0;
+"24
+[e = . . _TRISBbits 1 3 -> -> 0 `i `uc ]
+"25
+}
+[e :U 376 ]
+[; ;spi.c: 25: }
+[; ;spi.c: 27: ANSELHbits.ANS10 = 0;
+"27
+[e = . . _ANSELHbits 1 2 -> -> 0 `i `uc ]
+[; ;spi.c: 28: }
+"28
 [e :UE 373 ]
+}
+"30
+[v _spi_send_get_byte `(uc ~T0 @X0 1 ef1`uc ]
+"31
+{
+[; ;spi.c: 30: uint8_t spi_send_get_byte(uint8_t byte)
+[; ;spi.c: 31: {
+[e :U _spi_send_get_byte ]
+"30
+[v _byte `uc ~T0 @X0 1 r1 ]
+"31
+[f ]
+[; ;spi.c: 32: SSPBUF = byte;
+"32
+[e = _SSPBUF _byte ]
+[; ;spi.c: 33: while (!SSPSTATbits.BF);
+"33
+[e $U 378  ]
+[e :U 379 ]
+[e :U 378 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 379  ]
+[e :U 380 ]
+[; ;spi.c: 34: return SSPBUF;
+"34
+[e ) _SSPBUF ]
+[e $UE 377  ]
+[; ;spi.c: 35: }
+"35
+[e :UE 377 ]
+}
+"37
+[v _spi_send_byte `(v ~T0 @X0 1 ef1`uc ]
+"38
+{
+[; ;spi.c: 37: void spi_send_byte(uint8_t byte)
+[; ;spi.c: 38: {
+[e :U _spi_send_byte ]
+"37
+[v _byte `uc ~T0 @X0 1 r1 ]
+"38
+[f ]
+[; ;spi.c: 39: SSPBUF = byte;
+"39
+[e = _SSPBUF _byte ]
+[; ;spi.c: 40: }
+"40
+[e :UE 381 ]
+}
+"42
+[v _spi_peek_receive `(uc ~T0 @X0 1 ef2`uc`*uc ]
+"43
+{
+[; ;spi.c: 42: bool spi_peek_receive(bool get_byte, uint8_t *byte)
+[; ;spi.c: 43: {
+[e :U _spi_peek_receive ]
+"42
+[v _get_byte `uc ~T0 @X0 1 r1 ]
+[v _byte `*uc ~T0 @X0 1 r2 ]
+"43
+[f ]
+[; ;spi.c: 44: if (get_byte) {
+"44
+[e $ ! != -> _get_byte `i -> -> -> 0 `i `uc `i 383  ]
+{
+[; ;spi.c: 45: if (SSPIF) {
+"45
+[e $ ! _SSPIF 384  ]
+{
+[; ;spi.c: 46: *byte = SSPBUF;
+"46
+[e = *U _byte _SSPBUF ]
+[; ;spi.c: 47: return 1;
+"47
+[e ) -> -> 1 `i `uc ]
+[e $UE 382  ]
+"48
+}
+[; ;spi.c: 48: } else {
+[e $U 385  ]
+[e :U 384 ]
+{
+[; ;spi.c: 49: return 0;
+"49
+[e ) -> -> 0 `i `uc ]
+[e $UE 382  ]
+"50
+}
+[e :U 385 ]
+"51
+}
+[e :U 383 ]
+[; ;spi.c: 50: }
+[; ;spi.c: 51: }
+[; ;spi.c: 53: return (SSPIF) ? 1 : 0;
+"53
+[e ) -> ? _SSPIF : -> 1 `i -> 0 `i `uc ]
+[e $UE 382  ]
+[; ;spi.c: 54: }
+"54
+[e :UE 382 ]
+}
+"56
+[v _spi_send_data `(c ~T0 @X0 1 ef3`*uc`c`*uc ]
+"57
+{
+[; ;spi.c: 56: int8_t spi_send_data(uint8_t *data, int8_t size, uint8_t *returned_data)
+[; ;spi.c: 57: {
+[e :U _spi_send_data ]
+"56
+[v _data `*uc ~T0 @X0 1 r1 ]
+[v _size `c ~T0 @X0 1 r2 ]
+[v _returned_data `*uc ~T0 @X0 1 r3 ]
+"57
+[f ]
+"58
+[v _i `c ~T0 @X0 1 a ]
+"59
+[v _returned `uc ~T0 @X0 1 a ]
+[; ;spi.c: 58: int8_t i;
+[; ;spi.c: 59: uint8_t returned;
+[; ;spi.c: 61: if (size < 0) {
+"61
+[e $ ! < -> _size `i -> 0 `i 387  ]
+{
+[; ;spi.c: 62: for (i = 0; data[i] != 0; i++) {
+"62
+{
+[e = _i -> -> 0 `i `c ]
+[e $U 391  ]
+[e :U 388 ]
+{
+[; ;spi.c: 63: returned = spi_send_get_byte(data[i]);
+"63
+[e = _returned ( _spi_send_get_byte (1 *U + _data * -> _i `x -> -> # *U _data `i `x ]
+[; ;spi.c: 64: if (returned_data)
+"64
+[e $ ! != _returned_data -> -> 0 `i `*uc 392  ]
+[; ;spi.c: 65: returned_data[i] = returned;
+"65
+[e = *U + _returned_data * -> _i `x -> -> # *U _returned_data `i `x _returned ]
+[e :U 392 ]
+"66
+}
+"62
+[e ++ _i -> -> 1 `i `c ]
+[e :U 391 ]
+[e $ != -> *U + _data * -> _i `x -> -> # *U _data `i `x `i -> 0 `i 388  ]
+[e :U 389 ]
+"66
+}
+[; ;spi.c: 66: }
+[; ;spi.c: 67: returned = spi_send_get_byte(dummy_byte);
+"67
+[e = _returned ( _spi_send_get_byte (1 _dummy_byte ]
+[; ;spi.c: 68: if (returned_data)
+"68
+[e $ ! != _returned_data -> -> 0 `i `*uc 393  ]
+[; ;spi.c: 69: returned_data[i] = returned;
+"69
+[e = *U + _returned_data * -> _i `x -> -> # *U _returned_data `i `x _returned ]
+[e :U 393 ]
+"70
+}
+[; ;spi.c: 70: } else {
+[e $U 394  ]
+[e :U 387 ]
+{
+[; ;spi.c: 71: for (i = 0; i < size; i++) {
+"71
+{
+[e = _i -> -> 0 `i `c ]
+[e $U 398  ]
+[e :U 395 ]
+{
+[; ;spi.c: 72: returned = spi_send_get_byte(data[i]);
+"72
+[e = _returned ( _spi_send_get_byte (1 *U + _data * -> _i `x -> -> # *U _data `i `x ]
+[; ;spi.c: 73: if (returned_data)
+"73
+[e $ ! != _returned_data -> -> 0 `i `*uc 399  ]
+[; ;spi.c: 74: returned_data[i] = returned;
+"74
+[e = *U + _returned_data * -> _i `x -> -> # *U _returned_data `i `x _returned ]
+[e :U 399 ]
+"75
+}
+"71
+[e ++ _i -> -> 1 `i `c ]
+[e :U 398 ]
+[e $ < -> _i `i -> _size `i 395  ]
+[e :U 396 ]
+"75
+}
+"76
+}
+[e :U 394 ]
+[; ;spi.c: 75: }
+[; ;spi.c: 76: }
+[; ;spi.c: 78: return i;
+"78
+[e ) _i ]
+[e $UE 386  ]
+[; ;spi.c: 79: }
+"79
+[e :UE 386 ]
+}
+"81
+[v _spi_master_get_data `(c ~T0 @X0 1 ef2`*uc`c ]
+"82
+{
+[; ;spi.c: 81: int8_t spi_master_get_data(uint8_t *data, int8_t size)
+[; ;spi.c: 82: {
+[e :U _spi_master_get_data ]
+"81
+[v _data `*uc ~T0 @X0 1 r1 ]
+[v _size `c ~T0 @X0 1 r2 ]
+"82
+[f ]
+"83
+[v _i `c ~T0 @X0 1 a ]
+[; ;spi.c: 83: int8_t i;
+[; ;spi.c: 85: if (size < 0) {
+"85
+[e $ ! < -> _size `i -> 0 `i 401  ]
+{
+[; ;spi.c: 86: for (i = 0; data[i] != 0; i++)
+"86
+{
+[e = _i -> -> 0 `i `c ]
+[e $U 405  ]
+"87
+[e :U 402 ]
+[; ;spi.c: 87: data[i] = spi_send_get_byte(dummy_byte);
+[e = *U + _data * -> _i `x -> -> # *U _data `i `x ( _spi_send_get_byte (1 _dummy_byte ]
+"86
+[e ++ _i -> -> 1 `i `c ]
+[e :U 405 ]
+[e $ != -> *U + _data * -> _i `x -> -> # *U _data `i `x `i -> 0 `i 402  ]
+[e :U 403 ]
+"87
+}
+[; ;spi.c: 88: data[i] = 0;
+"88
+[e = *U + _data * -> _i `x -> -> # *U _data `i `x -> -> 0 `i `uc ]
+"89
+}
+[; ;spi.c: 89: } else {
+[e $U 406  ]
+[e :U 401 ]
+{
+[; ;spi.c: 90: for (i = 0; i < size; i++)
+"90
+{
+[e = _i -> -> 0 `i `c ]
+[e $U 410  ]
+"91
+[e :U 407 ]
+[; ;spi.c: 91: data[i] = spi_send_get_byte(dummy_byte);
+[e = *U + _data * -> _i `x -> -> # *U _data `i `x ( _spi_send_get_byte (1 _dummy_byte ]
+"90
+[e ++ _i -> -> 1 `i `c ]
+[e :U 410 ]
+[e $ < -> _i `i -> _size `i 407  ]
+[e :U 408 ]
+"91
+}
+"92
+}
+[e :U 406 ]
+[; ;spi.c: 92: }
+[; ;spi.c: 94: return i;
+"94
+[e ) _i ]
+[e $UE 400  ]
+[; ;spi.c: 95: }
+"95
+[e :UE 400 ]
+}
+"97
+[v _spi_set_dummy_byte `(v ~T0 @X0 1 ef1`uc ]
+"98
+{
+[; ;spi.c: 97: void spi_set_dummy_byte(uint8_t byte)
+[; ;spi.c: 98: {
+[e :U _spi_set_dummy_byte ]
+"97
+[v _byte `uc ~T0 @X0 1 r1 ]
+"98
+[f ]
+[; ;spi.c: 99: dummy_byte = byte;
+"99
+[e = _dummy_byte _byte ]
+[; ;spi.c: 100: }
+"100
+[e :UE 411 ]
+}
+"101
+[v _spi_get_dummy_byte `(uc ~T0 @X0 1 ef ]
+"102
+{
+[; ;spi.c: 101: uint8_t spi_get_dummy_byte(void)
+[; ;spi.c: 102: {
+[e :U _spi_get_dummy_byte ]
+[f ]
+[; ;spi.c: 103: return dummy_byte;
+"103
+[e ) _dummy_byte ]
+[e $UE 412  ]
+[; ;spi.c: 104: }
+"104
+[e :UE 412 ]
+}
+"106
+[v _spi_slave_get_byte `(uc ~T0 @X0 1 ef ]
+"107
+{
+[; ;spi.c: 106: uint8_t spi_slave_get_byte(void)
+[; ;spi.c: 107: {
+[e :U _spi_slave_get_byte ]
+[f ]
+[; ;spi.c: 108: while (!SSPSTATbits.BF);
+"108
+[e $U 414  ]
+[e :U 415 ]
+[e :U 414 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 415  ]
+[e :U 416 ]
+[; ;spi.c: 109: return SSPBUF;
+"109
+[e ) _SSPBUF ]
+[e $UE 413  ]
+[; ;spi.c: 110: }
+"110
+[e :UE 413 ]
+}
+"112
+[v _spi_slave_get_data `(uc ~T0 @X0 1 ef2`*uc`c ]
+"113
+{
+[; ;spi.c: 112: uint8_t spi_slave_get_data(uint8_t *data, int8_t size)
+[; ;spi.c: 113: {
+[e :U _spi_slave_get_data ]
+"112
+[v _data `*uc ~T0 @X0 1 r1 ]
+[v _size `c ~T0 @X0 1 r2 ]
+"113
+[f ]
+"114
+[v _i `c ~T0 @X0 1 a ]
+[; ;spi.c: 114: int8_t i;
+[; ;spi.c: 116: if (size < 0) {
+"116
+[e $ ! < -> _size `i -> 0 `i 418  ]
+{
+[; ;spi.c: 117: for (i = 0; data[i] != 0; i++)
+"117
+{
+[e = _i -> -> 0 `i `c ]
+[e $U 422  ]
+"118
+[e :U 419 ]
+[; ;spi.c: 118: data[i] = spi_slave_get_byte();
+[e = *U + _data * -> _i `x -> -> # *U _data `i `x ( _spi_slave_get_byte ..  ]
+"117
+[e ++ _i -> -> 1 `i `c ]
+[e :U 422 ]
+[e $ != -> *U + _data * -> _i `x -> -> # *U _data `i `x `i -> 0 `i 419  ]
+[e :U 420 ]
+"118
+}
+[; ;spi.c: 119: data[i] = 0;
+"119
+[e = *U + _data * -> _i `x -> -> # *U _data `i `x -> -> 0 `i `uc ]
+"120
+}
+[; ;spi.c: 120: } else {
+[e $U 423  ]
+[e :U 418 ]
+{
+[; ;spi.c: 121: for (i = 0; i < size; i++)
+"121
+{
+[e = _i -> -> 0 `i `c ]
+[e $U 427  ]
+"122
+[e :U 424 ]
+[; ;spi.c: 122: data[i] = spi_slave_get_byte();
+[e = *U + _data * -> _i `x -> -> # *U _data `i `x ( _spi_slave_get_byte ..  ]
+"121
+[e ++ _i -> -> 1 `i `c ]
+[e :U 427 ]
+[e $ < -> _i `i -> _size `i 424  ]
+[e :U 425 ]
+"122
+}
+"123
+}
+[e :U 423 ]
+[; ;spi.c: 123: }
+[; ;spi.c: 125: return i;
+"125
+[e ) -> _i `uc ]
+[e $UE 417  ]
+[; ;spi.c: 126: }
+"126
+[e :UE 417 ]
 }

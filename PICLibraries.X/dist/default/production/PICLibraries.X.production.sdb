@@ -1,0 +1,108 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F13K22 ]
+[d frameptr 4065 ]
+"63 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\double.c
+[v ___flpack __flpack `(d  1 e 3 0 ]
+"88 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fladd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fldiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\flmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\flsub.c
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"12 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\main.c
+[v _main main `(i  1 e 2 0 ]
+"52 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial.c
+[v _serial_get_byte serial_get_byte `(uc  1 e 1 0 ]
+"75
+[v _serial_send_byte serial_send_byte `(v  1 e 0 0 ]
+[s S35 . 1 `uc 1 ANSELH 1 0 :4:0 
+]
+"896 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f13k22.h
+[s S37 . 1 `uc 1 ANS8 1 0 :1:0 
+`uc 1 ANS9 1 0 :1:1 
+`uc 1 ANS10 1 0 :1:2 
+`uc 1 ANS11 1 0 :1:3 
+]
+[s S42 . 1 `uc 1 ANSEL8 1 0 :1:0 
+`uc 1 ANSEL9 1 0 :1:1 
+`uc 1 ANSEL10 1 0 :1:2 
+`uc 1 ANSEL11 1 0 :1:3 
+]
+[u S47 . 1 `S35 1 . 1 0 `S37 1 . 1 0 `S42 1 . 1 0 ]
+[v _ANSELHbits ANSELHbits `VES47  1 e 1 @3967 ]
+"3077
+[v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
+[s S76 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3118
+[s S85 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S88 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[s S91 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S94 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S97 . 1 `uc 1 RCD8 1 0 :1:0 
+]
+[u S99 . 1 `S76 1 . 1 0 `S85 1 . 1 0 `S88 1 . 1 0 `S91 1 . 1 0 `S94 1 . 1 0 `S97 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES99  1 e 1 @4011 ]
+"3286
+[v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
+"3583
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"3594
+[v _RCREG RCREG `VEuc  1 e 1 @4014 ]
+"3605
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+"3616
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @4016 ]
+"3898
+[v _BAUDCON BAUDCON `VEuc  1 e 1 @4024 ]
+"6242
+[v _INTCON INTCON `VEuc  1 e 1 @4082 ]
+"7325
+[v _RCIE RCIE `VEb  1 e 0 @31981 ]
+"7327
+[v _RCIF RCIF `VEb  1 e 0 @31989 ]
+"7659
+[v _TXIE TXIE `VEb  1 e 0 @31980 ]
+"7661
+[v _TXIF TXIF `VEb  1 e 0 @31988 ]
+[s S30 interrupt_serial 6 `uc 1 tx_int_enable 1 0 `*.2uc 1 data 3 1 `c 1 length 1 4 `c 1 position 1 5 ]
+"11 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial.c
+[v _interrupt_data interrupt_data `S30  1 s 6 interrupt_data ]
+"12 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\main.c
+[v _main main `(i  1 e 2 0 ]
+{
+"17
+} 0

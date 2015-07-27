@@ -76,8 +76,6 @@ int main() {
         serial_send_data(data, 10);
     }
     
-    while(1);
-    
     return (0);
 }
 

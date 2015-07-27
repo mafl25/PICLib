@@ -1,4 +1,4 @@
-#include "serial.h"
+#include "serial_pic.h"
 
 struct interrupt_serial 
 {
@@ -14,7 +14,7 @@ void setup_serial(uint8_t TXSTA_reg, uint8_t RCSTA_reg,  uint8_t BAUDCON_reg,
                   uint16_t baudrate_value)
 {
     if (RCSTA_reg & SERIAL_ENABLE) {
-        RX_DT_AN = 0;
+        RX_AN = 0;
     }
     
     TXSTA = TXSTA_reg;
@@ -27,6 +27,7 @@ void setup_serial(uint8_t TXSTA_reg, uint8_t RCSTA_reg,  uint8_t BAUDCON_reg,
 
 void setup_simple_serial(uint8_t baudrate_bits, uint16_t baudrate_value)
 {
+    RX_AN = 0;
     TXSTA = (baudrate_bits & BRGH_BIT) ? 0x24: 0x20;
     RCSTA = 0x90;
     BAUDCON = (baudrate_bits & BRG16_BIT) ? 0x08 : 0x00;
@@ -35,7 +36,7 @@ void setup_simple_serial(uint8_t baudrate_bits, uint16_t baudrate_value)
     SPBRG = baudrate_value;
 }
 
-bool serial_peek_buffer(bool get_byte, uint8_t *byte)
+bool serial_peek_receive(bool get_byte, uint8_t *byte)
 {
     if (get_byte) {
         if (RCIF) {
@@ -129,18 +130,18 @@ void serial_load_buffer(uint8_t *buffer, int8_t size)
 int8_t serial_send_buffer(void)
 {   
     if (TXIF && TXIE) {
-        if (interrupt_data.position < interrupt_data.length) {
-            serial_send_byte(interrupt_data.data[interrupt_data.position]);
-            interrupt_data.position++;
-            if (interrupt_data.position == interrupt_data.length)
-                TXIE  = 0;
-        } else if (interrupt_data.length < 0) {
+        if (interrupt_data.length < 0) {
             if (interrupt_data.data[interrupt_data.position] != 0) {
                 serial_send_byte(interrupt_data.data[interrupt_data.position]);
                 interrupt_data.position++;
             } else {
                 TXIE  = 0;
             }
+        } else if (interrupt_data.position < interrupt_data.length) {
+            serial_send_byte(interrupt_data.data[interrupt_data.position]);
+            interrupt_data.position++;
+            if (interrupt_data.position == interrupt_data.length)
+                TXIE  = 0;
         }
         
         return interrupt_data.position;

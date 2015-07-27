@@ -1,75 +1,68 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[p mainexit ]
-[v F3845 `(v ~T0 @X0 1 tf1`ul ]
-"161 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h
-[v __delay `JF3845 ~T0 @X0 0 e ]
-[p i __delay ]
-"101 serial_pic.h
-[v _setup_simple_serial `(v ~T0 @X0 0 ef2`uc`ui ]
-"129
-[v _serial_send_byte `(v ~T0 @X0 0 ef1`uc ]
-"123
-[v _serial_get_data `(c ~T0 @X0 0 ef2`*uc`c ]
-"136
-[v _serial_send_data `(c ~T0 @X0 0 ef2`*uc`c ]
-"109
-[v _serial_peek_receive `(uc ~T0 @X0 0 ef2`uc`*uc ]
-"9 main.c
-[p x FOSC=HS ]
-"10
-[p x PLLEN=OFF ]
-"11
-[p x PCLKEN=ON ]
-"12
-[p x FCMEN=OFF ]
-"13
-[p x IESO=OFF ]
-"16
-[p x PWRTEN=OFF ]
-"17
-[p x BOREN=SBORDIS ]
-"18
-[p x BORV=19 ]
-"21
-[p x WDTEN=OFF ]
-"22
-[p x WDTPS=32768 ]
-"25
-[p x HFOFST=ON ]
-"26
-[p x MCLRE=ON ]
-"29
-[p x STVREN=ON ]
-"30
-[p x LVP=OFF ]
-"31
-[p x BBSIZ=OFF ]
-"32
-[p x XINST=OFF ]
-"35
-[p x CP0=OFF ]
-"36
-[p x CP1=OFF ]
-"39
-[p x CPB=OFF ]
-"40
-[p x CPD=OFF ]
-"43
-[p x WRT0=OFF ]
-"44
-[p x WRT1=OFF ]
-"47
-[p x WRTC=OFF ]
-"48
-[p x WRTB=OFF ]
-"49
-[p x WRTD=OFF ]
-"52
-[p x EBTR0=OFF ]
-"53
-[p x EBTR1=OFF ]
-"56
-[p x EBTRB=OFF ]
+"3 serial_pic.c
+[s S373 `uc 1 `*uc 1 `c 1 `c 1 ]
+[n S373 interrupt_serial tx_int_enable data length position ]
+"880 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f13k22.h
+[s S39 :4 `uc 1 ]
+[n S39 . ANSELH ]
+"883
+[s S40 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S40 . ANS8 ANS9 ANS10 ANS11 ]
+"889
+[s S41 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S41 . ANSEL8 ANSEL9 ANSEL10 ANSEL11 ]
+"879
+[u S38 `S39 1 `S40 1 `S41 1 ]
+[n S38 . . . . ]
+"896
+[v _ANSELHbits `VS38 ~T0 @X0 0 e@3967 ]
+"3286
+[v _TXSTA `Vuc ~T0 @X0 0 e@4012 ]
+"3077
+[v _RCSTA `Vuc ~T0 @X0 0 e@4011 ]
+"3898
+[v _BAUDCON `Vuc ~T0 @X0 0 e@4024 ]
+"3616
+[v _SPBRGH `Vuc ~T0 @X0 0 e@4016 ]
+"3605
+[v _SPBRG `Vuc ~T0 @X0 0 e@4015 ]
+"7327
+[v _RCIF `Vb ~T0 @X0 0 e@31989 ]
+"3594
+[v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
+"7661
+[v _TXIF `Vb ~T0 @X0 0 e@31988 ]
+"3583
+[v _TXREG `Vuc ~T0 @X0 0 e@4013 ]
+"6242
+[v _INTCON `Vuc ~T0 @X0 0 e@4082 ]
+"7325
+[v _RCIE `Vb ~T0 @X0 0 e@31981 ]
+"7659
+[v _TXIE `Vb ~T0 @X0 0 e@31980 ]
+"3088
+[s S155 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S155 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"3098
+[s S156 :3 `uc 1 :1 `uc 1 ]
+[n S156 . . ADEN ]
+"3102
+[s S157 :5 `uc 1 :1 `uc 1 ]
+[n S157 . . SRENA ]
+"3106
+[s S158 :6 `uc 1 :1 `uc 1 ]
+[n S158 . . RC8_9 ]
+"3110
+[s S159 :6 `uc 1 :1 `uc 1 ]
+[n S159 . . RC9 ]
+"3114
+[s S160 :1 `uc 1 ]
+[n S160 . RCD8 ]
+"3087
+[u S154 `S155 1 `S156 1 `S157 1 `S158 1 `S159 1 `S160 1 ]
+[n S154 . . . . . . . ]
+"3118
+[v _RCSTAbits `VS154 ~T0 @X0 0 e@4011 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f13k22.h: 49: extern volatile unsigned char SRCON0 @ 0xF68;
@@ -3637,82 +3630,599 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;serial_pic.h: 161: void serial_load_buffer(uint8_t *buffer, int8_t size);
 [; ;serial_pic.h: 168: int8_t serial_send_buffer(void);
 [; ;serial_pic.h: 177: uint8_t serial_receive_error(bool clear);
-[; ;main.c: 64: void interrupt handler(void);
-"66 main.c
-[v _main `(i ~T0 @X0 1 ef ]
+[; ;serial_pic.c: 3: struct interrupt_serial
+[; ;serial_pic.c: 4: {
+[; ;serial_pic.c: 5: bool tx_int_enable;
+[; ;serial_pic.c: 6: uint8_t *data;
+[; ;serial_pic.c: 7: int8_t length;
+[; ;serial_pic.c: 8: int8_t position;
+[; ;serial_pic.c: 9: };
+"11 serial_pic.c
+[v _interrupt_data `S373 ~T0 @X0 1 s ]
+[; ;serial_pic.c: 11: static struct interrupt_serial interrupt_data;
+"13
+[v _setup_serial `(v ~T0 @X0 1 ef4`uc`uc`uc`ui ]
+"15
 {
-[; ;main.c: 66: int main() {
-[e :U _main ]
+[; ;serial_pic.c: 13: void setup_serial(uint8_t TXSTA_reg, uint8_t RCSTA_reg, uint8_t BAUDCON_reg,
+[; ;serial_pic.c: 14: uint16_t baudrate_value)
+[; ;serial_pic.c: 15: {
+[e :U _setup_serial ]
+"13
+[v _TXSTA_reg `uc ~T0 @X0 1 r1 ]
+[v _RCSTA_reg `uc ~T0 @X0 1 r2 ]
+[v _BAUDCON_reg `uc ~T0 @X0 1 r3 ]
+"14
+[v _baudrate_value `ui ~T0 @X0 1 r4 ]
+"15
 [f ]
-[; ;main.c: 67: _delay((unsigned long)((10)*(20000000/4000.0)));
-"67
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;main.c: 68: setup_simple_serial(0x08 | 0x04, 0x81);
-"68
-[e ( _setup_simple_serial (2 , -> | -> 8 `i -> 4 `i `uc -> -> 129 `i `ui ]
-[v F3920 `uc ~T0 @X0 -> 10 `i s ]
-[i F3920
-:U ..
-..
-]
-"69
-[v _data `uc ~T0 @X0 -> 10 `i a ]
-[; ;main.c: 69: uint8_t data[10] = {};
-[e = _data F3920 ]
-[; ;main.c: 72: serial_send_byte(0xAA);
-"72
-[e ( _serial_send_byte (1 -> -> 170 `i `uc ]
-[; ;main.c: 74: while (1) {
-"74
+[; ;serial_pic.c: 16: if (RCSTA_reg & 0x80) {
+"16
+[e $ ! != & -> _RCSTA_reg `i -> 128 `i -> 0 `i 375  ]
+{
+[; ;serial_pic.c: 17: ANSELHbits.ANS11 = 0;
+"17
+[e = . . _ANSELHbits 1 3 -> -> 0 `i `uc ]
+"18
+}
 [e :U 375 ]
-{
-[; ;main.c: 75: serial_get_data(data, 10);
-"75
-[e ( _serial_get_data (2 , &U _data -> -> 10 `i `c ]
-[; ;main.c: 76: serial_send_data(data, 10);
-"76
-[e ( _serial_send_data (2 , &U _data -> -> 10 `i `c ]
-"77
+[; ;serial_pic.c: 18: }
+[; ;serial_pic.c: 20: TXSTA = TXSTA_reg;
+"20
+[e = _TXSTA _TXSTA_reg ]
+[; ;serial_pic.c: 21: RCSTA = RCSTA_reg;
+"21
+[e = _RCSTA _RCSTA_reg ]
+[; ;serial_pic.c: 22: BAUDCON = BAUDCON_reg;
+"22
+[e = _BAUDCON _BAUDCON_reg ]
+[; ;serial_pic.c: 24: SPBRGH = baudrate_value >> 8;
+"24
+[e = _SPBRGH -> >> _baudrate_value -> 8 `i `uc ]
+[; ;serial_pic.c: 25: SPBRG = baudrate_value;
+"25
+[e = _SPBRG -> _baudrate_value `uc ]
+[; ;serial_pic.c: 26: }
+"26
+[e :UE 374 ]
 }
-[e :U 374 ]
-"74
-[e $U 375  ]
-[e :U 376 ]
-[; ;main.c: 77: }
-[; ;main.c: 79: while(1);
-"79
-[e :U 378 ]
-[e :U 377 ]
-[e $U 378  ]
-[e :U 379 ]
-[; ;main.c: 81: return (0);
-"81
-[e ) -> 0 `i ]
-[e $UE 373  ]
-[; ;main.c: 82: }
-"82
-[e :UE 373 ]
-}
-[v F3923 `(v ~T0 @X0 1 tf ]
-"84
-[v _isr `IF3923 ~T0 @X0 1 e ]
-"85
+"28
+[v _setup_simple_serial `(v ~T0 @X0 1 ef2`uc`ui ]
+"29
 {
-[; ;main.c: 84: void interrupt isr(void)
-[; ;main.c: 85: {
-[e :U _isr ]
+[; ;serial_pic.c: 28: void setup_simple_serial(uint8_t baudrate_bits, uint16_t baudrate_value)
+[; ;serial_pic.c: 29: {
+[e :U _setup_simple_serial ]
+"28
+[v _baudrate_bits `uc ~T0 @X0 1 r1 ]
+[v _baudrate_value `ui ~T0 @X0 1 r2 ]
+"29
 [f ]
+[; ;serial_pic.c: 30: ANSELHbits.ANS11 = 0;
+"30
+[e = . . _ANSELHbits 1 3 -> -> 0 `i `uc ]
+[; ;serial_pic.c: 31: TXSTA = (baudrate_bits & 0x04) ? 0x24: 0x20;
+"31
+[e = _TXSTA -> ? != & -> _baudrate_bits `i -> 4 `i -> 0 `i : -> 36 `i -> 32 `i `uc ]
+[; ;serial_pic.c: 32: RCSTA = 0x90;
+"32
+[e = _RCSTA -> -> 144 `i `uc ]
+[; ;serial_pic.c: 33: BAUDCON = (baudrate_bits & 0x08) ? 0x08 : 0x00;
+"33
+[e = _BAUDCON -> ? != & -> _baudrate_bits `i -> 8 `i -> 0 `i : -> 8 `i -> 0 `i `uc ]
+[; ;serial_pic.c: 35: SPBRGH = baudrate_value >> 8;
+"35
+[e = _SPBRGH -> >> _baudrate_value -> 8 `i `uc ]
+[; ;serial_pic.c: 36: SPBRG = baudrate_value;
+"36
+[e = _SPBRG -> _baudrate_value `uc ]
+[; ;serial_pic.c: 37: }
+"37
+[e :UE 376 ]
+}
+"39
+[v _serial_peek_receive `(uc ~T0 @X0 1 ef2`uc`*uc ]
+"40
+{
+[; ;serial_pic.c: 39: bool serial_peek_receive(bool get_byte, uint8_t *byte)
+[; ;serial_pic.c: 40: {
+[e :U _serial_peek_receive ]
+"39
+[v _get_byte `uc ~T0 @X0 1 r1 ]
+[v _byte `*uc ~T0 @X0 1 r2 ]
+"40
+[f ]
+[; ;serial_pic.c: 41: if (get_byte) {
+"41
+[e $ ! != -> _get_byte `i -> -> -> 0 `i `uc `i 378  ]
+{
+[; ;serial_pic.c: 42: if (RCIF) {
+"42
+[e $ ! _RCIF 379  ]
+{
+[; ;serial_pic.c: 43: *byte = RCREG;
+"43
+[e = *U _byte _RCREG ]
+[; ;serial_pic.c: 44: return 1;
+"44
+[e ) -> -> 1 `i `uc ]
+[e $UE 377  ]
+"45
+}
+[; ;serial_pic.c: 45: } else {
+[e $U 380  ]
+[e :U 379 ]
+{
+[; ;serial_pic.c: 46: return 0;
+"46
+[e ) -> -> 0 `i `uc ]
+[e $UE 377  ]
+"47
+}
+[e :U 380 ]
+"48
+}
+[e :U 378 ]
+[; ;serial_pic.c: 47: }
+[; ;serial_pic.c: 48: }
+[; ;serial_pic.c: 50: return (RCIF) ? 1 : 0;
+"50
+[e ) -> ? _RCIF : -> 1 `i -> 0 `i `uc ]
+[e $UE 377  ]
+[; ;serial_pic.c: 51: }
+"51
+[e :UE 377 ]
+}
+"53
+[v _serial_get_byte `(uc ~T0 @X0 1 ef ]
+"54
+{
+[; ;serial_pic.c: 53: uint8_t serial_get_byte(void)
+[; ;serial_pic.c: 54: {
+[e :U _serial_get_byte ]
+[f ]
+[; ;serial_pic.c: 55: while (!RCIF);
+"55
+[e $U 382  ]
+[e :U 383 ]
+[e :U 382 ]
+[e $ ! _RCIF 383  ]
+[e :U 384 ]
+[; ;serial_pic.c: 57: return RCREG;
+"57
+[e ) _RCREG ]
+[e $UE 381  ]
+[; ;serial_pic.c: 58: }
+"58
+[e :UE 381 ]
+}
+"60
+[v _serial_get_data `(c ~T0 @X0 1 ef2`*uc`c ]
+"61
+{
+[; ;serial_pic.c: 60: int8_t serial_get_data(uint8_t *data, int8_t size)
+[; ;serial_pic.c: 61: {
+[e :U _serial_get_data ]
+"60
+[v _data `*uc ~T0 @X0 1 r1 ]
+[v _size `c ~T0 @X0 1 r2 ]
+"61
+[f ]
+"62
+[v _i `c ~T0 @X0 1 a ]
+[; ;serial_pic.c: 62: int8_t i;
+[; ;serial_pic.c: 64: if (size < 0) {
+"64
+[e $ ! < -> _size `i -> 0 `i 386  ]
+{
+[; ;serial_pic.c: 65: for (i = 0; data[i] != 0; i++)
+"65
+{
+[e = _i -> -> 0 `i `c ]
+[e $U 390  ]
+"66
+[e :U 387 ]
+[; ;serial_pic.c: 66: data[i] = serial_get_byte();
+[e = *U + _data * -> _i `x -> -> # *U _data `i `x ( _serial_get_byte ..  ]
+"65
+[e ++ _i -> -> 1 `i `c ]
+[e :U 390 ]
+[e $ != -> *U + _data * -> _i `x -> -> # *U _data `i `x `i -> 0 `i 387  ]
+[e :U 388 ]
+"66
+}
+[; ;serial_pic.c: 67: data[i] = 0;
+"67
+[e = *U + _data * -> _i `x -> -> # *U _data `i `x -> -> 0 `i `uc ]
+"68
+}
+[; ;serial_pic.c: 68: } else {
+[e $U 391  ]
+[e :U 386 ]
+{
+[; ;serial_pic.c: 69: for (i = 0; i < size; i++)
+"69
+{
+[e = _i -> -> 0 `i `c ]
+[e $U 395  ]
+"70
+[e :U 392 ]
+[; ;serial_pic.c: 70: data[i] = serial_get_byte();
+[e = *U + _data * -> _i `x -> -> # *U _data `i `x ( _serial_get_byte ..  ]
+"69
+[e ++ _i -> -> 1 `i `c ]
+[e :U 395 ]
+[e $ < -> _i `i -> _size `i 392  ]
+[e :U 393 ]
+"70
+}
+"71
+}
+[e :U 391 ]
+[; ;serial_pic.c: 71: }
+[; ;serial_pic.c: 73: return i;
+"73
+[e ) _i ]
+[e $UE 385  ]
+[; ;serial_pic.c: 74: }
+"74
+[e :UE 385 ]
+}
+"76
+[v _serial_send_byte `(v ~T0 @X0 1 ef1`uc ]
+"77
+{
+[; ;serial_pic.c: 76: void serial_send_byte(uint8_t byte)
+[; ;serial_pic.c: 77: {
+[e :U _serial_send_byte ]
+"76
+[v _byte `uc ~T0 @X0 1 r1 ]
+"77
+[f ]
+[; ;serial_pic.c: 78: while (!TXIF);
+"78
+[e $U 397  ]
+[e :U 398 ]
+[e :U 397 ]
+[e $ ! _TXIF 398  ]
+[e :U 399 ]
+[; ;serial_pic.c: 79: TXREG = byte;
+"79
+[e = _TXREG _byte ]
+[; ;serial_pic.c: 80: }
+"80
+[e :UE 396 ]
+}
+"82
+[v _serial_send_data `(c ~T0 @X0 1 ef2`*uc`c ]
+"83
+{
+[; ;serial_pic.c: 82: int8_t serial_send_data(uint8_t *data, int8_t size)
+[; ;serial_pic.c: 83: {
+[e :U _serial_send_data ]
+"82
+[v _data `*uc ~T0 @X0 1 r1 ]
+[v _size `c ~T0 @X0 1 r2 ]
+"83
+[f ]
+"84
+[v _i `c ~T0 @X0 1 a ]
+[; ;serial_pic.c: 84: int8_t i;
+[; ;serial_pic.c: 86: if (size < 0) {
 "86
-[v _byte `uc ~T0 @X0 1 a ]
-[; ;main.c: 86: uint8_t byte;
-[; ;main.c: 87: if (serial_peek_receive(1, &byte))
+[e $ ! < -> _size `i -> 0 `i 401  ]
+{
+[; ;serial_pic.c: 87: for (i = 0; data[i] != 0; i++)
 "87
-[e $ ! != -> ( _serial_peek_receive (2 , -> -> 1 `i `uc &U _byte `i -> -> -> 0 `i `uc `i 381  ]
-[; ;main.c: 88: serial_send_byte(byte);
+{
+[e = _i -> -> 0 `i `c ]
+[e $U 405  ]
 "88
-[e ( _serial_send_byte (1 _byte ]
-[e :U 381 ]
-[; ;main.c: 89: }
+[e :U 402 ]
+[; ;serial_pic.c: 88: serial_send_byte(data[i]);
+[e ( _serial_send_byte (1 *U + _data * -> _i `x -> -> # *U _data `i `x ]
+"87
+[e ++ _i -> -> 1 `i `c ]
+[e :U 405 ]
+[e $ != -> *U + _data * -> _i `x -> -> # *U _data `i `x `i -> 0 `i 402  ]
+[e :U 403 ]
+"88
+}
+[; ;serial_pic.c: 89: serial_send_byte(0);
 "89
-[e :UE 380 ]
+[e ( _serial_send_byte (1 -> -> 0 `i `uc ]
+"90
+}
+[; ;serial_pic.c: 90: } else {
+[e $U 406  ]
+[e :U 401 ]
+{
+[; ;serial_pic.c: 91: for (i = 0; i < size; i++)
+"91
+{
+[e = _i -> -> 0 `i `c ]
+[e $U 410  ]
+"92
+[e :U 407 ]
+[; ;serial_pic.c: 92: serial_send_byte(data[i]);
+[e ( _serial_send_byte (1 *U + _data * -> _i `x -> -> # *U _data `i `x ]
+"91
+[e ++ _i -> -> 1 `i `c ]
+[e :U 410 ]
+[e $ < -> _i `i -> _size `i 407  ]
+[e :U 408 ]
+"92
+}
+"93
+}
+[e :U 406 ]
+[; ;serial_pic.c: 93: }
+[; ;serial_pic.c: 95: return i;
+"95
+[e ) _i ]
+[e $UE 400  ]
+[; ;serial_pic.c: 96: }
+"96
+[e :UE 400 ]
+}
+"98
+[v _serial_interrupts `(v ~T0 @X0 1 ef1`uc ]
+"99
+{
+[; ;serial_pic.c: 98: void serial_interrupts(uint8_t interrupts)
+[; ;serial_pic.c: 99: {
+[e :U _serial_interrupts ]
+"98
+[v _interrupts `uc ~T0 @X0 1 r1 ]
+"99
+[f ]
+[; ;serial_pic.c: 100: if (interrupts & (0x01 | 0x02)) {
+"100
+[e $ ! != & -> _interrupts `i | -> 1 `i -> 2 `i -> 0 `i 412  ]
+{
+[; ;serial_pic.c: 101: INTCON |= 0xC0;
+"101
+[e =| _INTCON -> -> 192 `i `uc ]
+[; ;serial_pic.c: 102: RCIE = (interrupts & 0x01) ? 1 : 0;
+"102
+[e = _RCIE -> ? != & -> _interrupts `i -> 1 `i -> 0 `i : -> 1 `i -> 0 `i `b ]
+[; ;serial_pic.c: 103: interrupt_data.tx_int_enable = (interrupts & 0x02) ? 1 : 0;
+"103
+[e = . _interrupt_data 0 -> ? != & -> _interrupts `i -> 2 `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"104
+}
+[e :U 412 ]
+[; ;serial_pic.c: 104: }
+[; ;serial_pic.c: 105: }
+"105
+[e :UE 411 ]
+}
+"107
+[v _serial_disable_interrupts `(v ~T0 @X0 1 ef2`uc`uc ]
+"108
+{
+[; ;serial_pic.c: 107: void serial_disable_interrupts(uint8_t interrupts, bool all_interrupts)
+[; ;serial_pic.c: 108: {
+[e :U _serial_disable_interrupts ]
+"107
+[v _interrupts `uc ~T0 @X0 1 r1 ]
+[v _all_interrupts `uc ~T0 @X0 1 r2 ]
+"108
+[f ]
+[; ;serial_pic.c: 109: if (all_interrupts)
+"109
+[e $ ! != -> _all_interrupts `i -> -> -> 0 `i `uc `i 414  ]
+[; ;serial_pic.c: 110: INTCON &= 0x3F;
+"110
+[e =& _INTCON -> -> 63 `i `uc ]
+[e :U 414 ]
+[; ;serial_pic.c: 112: if (interrupts & 0x01)
+"112
+[e $ ! != & -> _interrupts `i -> 1 `i -> 0 `i 415  ]
+[; ;serial_pic.c: 113: RCIE = 0;
+"113
+[e = _RCIE -> -> 0 `i `b ]
+[e :U 415 ]
+[; ;serial_pic.c: 115: if (interrupts & 0x02)
+"115
+[e $ ! != & -> _interrupts `i -> 2 `i -> 0 `i 416  ]
+[; ;serial_pic.c: 116: interrupt_data.tx_int_enable = 0;
+"116
+[e = . _interrupt_data 0 -> -> 0 `i `uc ]
+[e :U 416 ]
+[; ;serial_pic.c: 117: }
+"117
+[e :UE 413 ]
+}
+"119
+[v _serial_load_buffer `(v ~T0 @X0 1 ef2`*uc`c ]
+"120
+{
+[; ;serial_pic.c: 119: void serial_load_buffer(uint8_t *buffer, int8_t size)
+[; ;serial_pic.c: 120: {
+[e :U _serial_load_buffer ]
+"119
+[v _buffer `*uc ~T0 @X0 1 r1 ]
+[v _size `c ~T0 @X0 1 r2 ]
+"120
+[f ]
+[; ;serial_pic.c: 121: if (interrupt_data.tx_int_enable) {
+"121
+[e $ ! != -> . _interrupt_data 0 `i -> -> -> 0 `i `uc `i 418  ]
+{
+[; ;serial_pic.c: 122: interrupt_data.data = buffer;
+"122
+[e = . _interrupt_data 1 _buffer ]
+[; ;serial_pic.c: 123: interrupt_data.length = size;
+"123
+[e = . _interrupt_data 2 _size ]
+[; ;serial_pic.c: 124: interrupt_data.position = 0;
+"124
+[e = . _interrupt_data 3 -> -> 0 `i `c ]
+[; ;serial_pic.c: 126: TXIE = 1;
+"126
+[e = _TXIE -> -> 1 `i `b ]
+"127
+}
+[e :U 418 ]
+[; ;serial_pic.c: 127: }
+[; ;serial_pic.c: 128: }
+"128
+[e :UE 417 ]
+}
+"130
+[v _serial_send_buffer `(c ~T0 @X0 1 ef ]
+"131
+{
+[; ;serial_pic.c: 130: int8_t serial_send_buffer(void)
+[; ;serial_pic.c: 131: {
+[e :U _serial_send_buffer ]
+[f ]
+[; ;serial_pic.c: 132: if (TXIF && TXIE) {
+"132
+[e $ ! && _TXIF _TXIE 420  ]
+{
+[; ;serial_pic.c: 133: if (interrupt_data.length < 0) {
+"133
+[e $ ! < -> . _interrupt_data 2 `i -> 0 `i 421  ]
+{
+[; ;serial_pic.c: 134: if (interrupt_data.data[interrupt_data.position] != 0) {
+"134
+[e $ ! != -> *U + . _interrupt_data 1 * -> . _interrupt_data 3 `x -> -> # *U . _interrupt_data 1 `i `x `i -> 0 `i 422  ]
+{
+[; ;serial_pic.c: 135: serial_send_byte(interrupt_data.data[interrupt_data.position]);
+"135
+[e ( _serial_send_byte (1 *U + . _interrupt_data 1 * -> . _interrupt_data 3 `x -> -> # *U . _interrupt_data 1 `i `x ]
+[; ;serial_pic.c: 136: interrupt_data.position++;
+"136
+[e ++ . _interrupt_data 3 -> -> 1 `i `c ]
+"137
+}
+[; ;serial_pic.c: 137: } else {
+[e $U 423  ]
+[e :U 422 ]
+{
+[; ;serial_pic.c: 138: TXIE = 0;
+"138
+[e = _TXIE -> -> 0 `i `b ]
+"139
+}
+[e :U 423 ]
+"140
+}
+[; ;serial_pic.c: 139: }
+[; ;serial_pic.c: 140: } else if (interrupt_data.position < interrupt_data.length) {
+[e $U 424  ]
+[e :U 421 ]
+[e $ ! < -> . _interrupt_data 3 `i -> . _interrupt_data 2 `i 425  ]
+{
+[; ;serial_pic.c: 141: serial_send_byte(interrupt_data.data[interrupt_data.position]);
+"141
+[e ( _serial_send_byte (1 *U + . _interrupt_data 1 * -> . _interrupt_data 3 `x -> -> # *U . _interrupt_data 1 `i `x ]
+[; ;serial_pic.c: 142: interrupt_data.position++;
+"142
+[e ++ . _interrupt_data 3 -> -> 1 `i `c ]
+[; ;serial_pic.c: 143: if (interrupt_data.position == interrupt_data.length)
+"143
+[e $ ! == -> . _interrupt_data 3 `i -> . _interrupt_data 2 `i 426  ]
+[; ;serial_pic.c: 144: TXIE = 0;
+"144
+[e = _TXIE -> -> 0 `i `b ]
+[e :U 426 ]
+"145
+}
+[e :U 425 ]
+"147
+[e :U 424 ]
+[; ;serial_pic.c: 145: }
+[; ;serial_pic.c: 147: return interrupt_data.position;
+[e ) . _interrupt_data 3 ]
+[e $UE 419  ]
+"148
+}
+[; ;serial_pic.c: 148: } else {
+[e $U 427  ]
+[e :U 420 ]
+{
+[; ;serial_pic.c: 149: return -1;
+"149
+[e ) -> -U -> 1 `i `c ]
+[e $UE 419  ]
+"150
+}
+[e :U 427 ]
+[; ;serial_pic.c: 150: }
+[; ;serial_pic.c: 151: }
+"151
+[e :UE 419 ]
+}
+"153
+[v _serial_receive_error `(uc ~T0 @X0 1 ef1`uc ]
+"154
+{
+[; ;serial_pic.c: 153: uint8_t serial_receive_error(bool clear)
+[; ;serial_pic.c: 154: {
+[e :U _serial_receive_error ]
+"153
+[v _clear `uc ~T0 @X0 1 r1 ]
+"154
+[f ]
+"155
+[v _error `uc ~T0 @X0 1 a ]
+[; ;serial_pic.c: 155: uint8_t error = 0;
+[e = _error -> -> 0 `i `uc ]
+[; ;serial_pic.c: 157: if (RCSTAbits.FERR && RCSTAbits.OERR) {
+"157
+[e $ ! && != -> . . _RCSTAbits 0 2 `i -> -> -> 0 `i `Vuc `i != -> . . _RCSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 429  ]
+{
+[; ;serial_pic.c: 158: error = 3;
+"158
+[e = _error -> -> 3 `i `uc ]
+"159
+}
+[; ;serial_pic.c: 159: } else if (RCSTAbits.FERR) {
+[e $U 430  ]
+[e :U 429 ]
+[e $ ! != -> . . _RCSTAbits 0 2 `i -> -> -> 0 `i `Vuc `i 431  ]
+{
+[; ;serial_pic.c: 160: error = 2;
+"160
+[e = _error -> -> 2 `i `uc ]
+"161
+}
+[; ;serial_pic.c: 161: } else if (RCSTAbits.OERR) {
+[e $U 432  ]
+[e :U 431 ]
+[e $ ! != -> . . _RCSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 433  ]
+{
+[; ;serial_pic.c: 162: error = 1;
+"162
+[e = _error -> -> 1 `i `uc ]
+"163
+}
+[e :U 433 ]
+"165
+[e :U 432 ]
+[e :U 430 ]
+[; ;serial_pic.c: 163: }
+[; ;serial_pic.c: 165: if (clear) {
+[e $ ! != -> _clear `i -> -> -> 0 `i `uc `i 434  ]
+{
+[; ;serial_pic.c: 166: RCSTAbits.SPEN = 0;
+"166
+[e = . . _RCSTAbits 0 7 -> -> 0 `i `uc ]
+[; ;serial_pic.c: 167: RCSTAbits.SPEN = 1;
+"167
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"168
+}
+[e :U 434 ]
+[; ;serial_pic.c: 168: }
+[; ;serial_pic.c: 170: return error;
+"170
+[e ) _error ]
+[e $UE 428  ]
+[; ;serial_pic.c: 171: }
+"171
+[e :UE 428 ]
 }

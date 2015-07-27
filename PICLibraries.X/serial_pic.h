@@ -12,7 +12,7 @@
 #ifndef SERIAL_H
 #define	SERIAL_H
 
-#define RX_DT_AN        ANSELHbits.ANS11
+#define RX_AN        ANSELHbits.ANS11
 
 /*
  * This first group of masks go in the "register_1" parameter. They need to be
@@ -69,7 +69,7 @@
  */
 
 #define DATA_RX_POL     0x20
-#define CLK_TX_POBRG16_BITL      0x10
+#define CLK_TX_POL      0x10
 #define BRG16_BIT       0x08
 #define WAKE_UP_EN      0x02
 #define AUTO_BAUD       0x01

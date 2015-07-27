@@ -1,4 +1,4 @@
-#include "spi.h"
+#include "spi_pic.h"
 
 #define SDI_TRIS    TRISBbits.RB4
 #define SDI_AN      ANSELHbits.ANS10

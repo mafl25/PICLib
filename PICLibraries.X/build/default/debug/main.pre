@@ -4916,16 +4916,17 @@ uint8_t serial_receive_error(bool clear);
 void interrupt handler(void);
 
 int main() {
-_delay((unsigned long)((10)*(20000000/4000.0)));
-setup_simple_serial(0x08 | 0x04, 0x81);
-uint8_t data[10] = {};
 
+
+setup_simple_serial(0x08 | 0x04, 0x81);
+
+int8_t i;
 
 serial_send_byte(0xAA);
 
 while (1) {
-serial_get_data(data, 10);
-serial_send_data(data, 10);
+uint8_t byte = serial_get_byte();
+serial_send_byte(byte);
 }
 
 while(1);

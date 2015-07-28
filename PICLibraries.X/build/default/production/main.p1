@@ -3679,40 +3679,34 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 375  ]
 [e :U 376 ]
 [; ;main.c: 77: }
-[; ;main.c: 79: while(1);
+[; ;main.c: 79: return (0);
 "79
-[e :U 378 ]
-[e :U 377 ]
-[e $U 378  ]
-[e :U 379 ]
-[; ;main.c: 81: return (0);
-"81
 [e ) -> 0 `i ]
 [e $UE 373  ]
-[; ;main.c: 82: }
-"82
+[; ;main.c: 80: }
+"80
 [e :UE 373 ]
 }
 [v F3923 `(v ~T0 @X0 1 tf ]
-"84
+"82
 [v _isr `IF3923 ~T0 @X0 1 e ]
-"85
+"83
 {
-[; ;main.c: 84: void interrupt isr(void)
-[; ;main.c: 85: {
+[; ;main.c: 82: void interrupt isr(void)
+[; ;main.c: 83: {
 [e :U _isr ]
 [f ]
-"86
+"84
 [v _byte `uc ~T0 @X0 1 a ]
-[; ;main.c: 86: uint8_t byte;
-[; ;main.c: 87: if (serial_peek_receive(1, &byte))
-"87
-[e $ ! != -> ( _serial_peek_receive (2 , -> -> 1 `i `uc &U _byte `i -> -> -> 0 `i `uc `i 381  ]
-[; ;main.c: 88: serial_send_byte(byte);
-"88
+[; ;main.c: 84: uint8_t byte;
+[; ;main.c: 85: if (serial_peek_receive(1, &byte))
+"85
+[e $ ! != -> ( _serial_peek_receive (2 , -> -> 1 `i `uc &U _byte `i -> -> -> 0 `i `uc `i 378  ]
+[; ;main.c: 86: serial_send_byte(byte);
+"86
 [e ( _serial_send_byte (1 _byte ]
-[e :U 381 ]
-[; ;main.c: 89: }
-"89
-[e :UE 380 ]
+[e :U 378 ]
+[; ;main.c: 87: }
+"87
+[e :UE 377 ]
 }

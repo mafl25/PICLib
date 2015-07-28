@@ -1,26 +1,27 @@
 #include "circular_buffer.h"
 
-uint8_t buffer_count(const struct circular_buffer *buffer)
+
+uint8_t buffer_count(const struct circular_buffer volatile *buffer)
 {
 	return buffer->count;
 }
 
-uint8_t buffer_space(const struct circular_buffer *buffer)
+uint8_t buffer_space(const struct circular_buffer volatile *buffer)
 {
 	return BUFFER_SIZE - buffer->count;
 }
 
-bool buffer_empty(const struct circular_buffer *buffer)
+bool buffer_empty(const struct circular_buffer volatile *buffer)
 {
 	return (buffer->count == 0) ? true : false;
 }
 
-bool buffer_full(const struct circular_buffer *buffer)
+bool buffer_full(const struct circular_buffer volatile *buffer)
 {
 	return (buffer->count == BUFFER_SIZE) ? true : false;
 }
 
-bool buffer_push(struct circular_buffer *buffer, uint8_t byte)
+bool buffer_push(struct circular_buffer volatile *buffer, uint8_t byte)
 {
 	if (buffer->count == BUFFER_SIZE) {
 		return false;
@@ -33,7 +34,7 @@ bool buffer_push(struct circular_buffer *buffer, uint8_t byte)
 	}
 }
 
-int16_t buffer_pop(struct circular_buffer *buffer)
+int16_t buffer_pop(struct circular_buffer volatile *buffer)
 {
     if (buffer->count <= 0) {
         return -1;

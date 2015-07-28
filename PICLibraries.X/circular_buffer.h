@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#define BUFFER_SIZE 0x40  //Must always be 2^n, up to 128, otherwise increase
+#define BUFFER_SIZE 0x20  //Must always be 2^n, up to 128, otherwise increase
 						  //the integer type in the structure
 
 struct circular_buffer {
@@ -18,36 +18,36 @@ struct circular_buffer {
  * and returns the next value. (FIFO buffer) If the buffer is empty, it will 
  * return a -1.
  */
-int16_t buffer_pop(struct circular_buffer *buffer);
+int16_t buffer_pop(struct circular_buffer volatile *buffer);
 
 /*
  * The function "buffer_push" pushes a value to a circular_buffer struct.
  * If the buffer is full, it will return a false.
  */
-bool buffer_push(struct circular_buffer *buffer, uint8_t byte);
+bool buffer_push(struct circular_buffer volatile *buffer, uint8_t byte);
 
 /*
  * The function "buffer_full" checks if a buffer is full. It returns true if 
  * it is full.
  */
-bool buffer_full(const struct circular_buffer *buffer);
+bool buffer_full(const struct circular_buffer volatile *buffer);
 
 /*
  * The function "buffer_empty" checks if a buffer is empty. It returns true if 
  * it is empty.
  */
-bool buffer_empty(const struct circular_buffer *buffer);
+bool buffer_empty(const struct circular_buffer volatile *buffer);
 
 /*
  * The function "buffer_count" returns the amount of elements in a 
  * circular_buffer struct.
  */
-uint8_t buffer_count(const struct circular_buffer *buffer);
+uint8_t buffer_count(const struct circular_buffer volatile *buffer);
 
 /*
  * The function "buffer_space" returns the amount of space in a 
  * circular_buffer struct.
  */
-uint8_t buffer_space(const struct circular_buffer *buffer);
+uint8_t buffer_space(const struct circular_buffer volatile *buffer);
 
 #endif

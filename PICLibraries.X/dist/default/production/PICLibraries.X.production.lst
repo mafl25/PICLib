@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
-                                                                                               Mon Jul 27 15:26:49 2015
+                                                                                               Tue Jul 28 13:51:58 2015
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
      1                           	processor	18F13K22
@@ -93,11 +93,11 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
     87  000216  0E41               	movlw	65
     88  000218  6E1E               	movwf	??_main& (0+255),c
     89  00021A  0EEE               	movlw	238
-    90  00021C                     u877:
+    90  00021C                     u897:
     91  00021C  2EE8               	decfsz	wreg,f,c
-    92  00021E  D7FE               	goto	u877
+    92  00021E  D7FE               	goto	u897
     93  000220  2E1E               	decfsz	??_main& (0+255),f,c
-    94  000222  D7FC               	goto	u877
+    94  000222  D7FC               	goto	u897
     95  000224  D000               	nop2	
     96                           
     97                           ;main.c: 68: setup_simple_serial(0x08 | 0x04, 0x81);
@@ -106,22 +106,22 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    100  00022A  0E81               	movlw	129
    101  00022C  6E13               	movwf	setup_simple_serial@baudrate_value,c
    102  00022E  0E0C               	movlw	12
-   103  000230  EC3B  F001         	call	_setup_simple_serial
+   103  000230  EC3A  F001         	call	_setup_simple_serial
    104                           
    105                           ;main.c: 69: uint8_t data[10] = {};
    106  000234  EE20  F029         	lfsr	2,main@F3920
    107  000238  EE10  F01F         	lfsr	1,main@data
    108  00023C  0E09               	movlw	9
-   109  00023E                     u671:
+   109  00023E                     u691:
    110  00023E  CFDB FFE3          	movff	plusw2,plusw1
    111  000242  06E8               	decf	wreg,f,c
-   112  000244  E2FC               	bc	u671
+   112  000244  E2FC               	bc	u691
    113                           
    114                           ;main.c: 72: serial_send_byte(0xAA);
    115  000246  0EAA               	movlw	170
-   116  000248  EC92  F001         	call	_serial_send_byte
-   117  00024C  D000               	goto	l1252
-   118  00024E                     l1252:
+   116  000248  EC91  F001         	call	_serial_send_byte
+   117  00024C  D000               	goto	l1296
+   118  00024E                     l1296:
    119                           
    120                           ;main.c: 75: serial_get_data(data, 10);
    121  00024E  0E1F               	movlw	low main@data
@@ -140,39 +140,39 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    134  000266  0E0A               	movlw	10
    135  000268  6E1B               	movwf	serial_send_data@size,c
    136  00026A  ECB4  F000         	call	_serial_send_data	;wreg free
-   137  00026E  D7EF               	goto	l1252
-   138  000270  D7FF               	goto	l30
-   139                           
-   140                           ;main.c: 81: return (0);
+   137  00026E  D7EF               	goto	l1296
+   138                           
+   139                           ;main.c: 77: }
+   140                           ;main.c: 79: return (0);
    141                           ;	Return value of _main is never used
-   142  000272  EF4B  F000         	goto	start
-   143  000276                     __end_of_main:
+   142  000270  EF4B  F000         	goto	start
+   143  000274                     __end_of_main:
    144                           	opt stack 0
    145                           wreg	equ	0xFE8
    146                           plusw1	equ	0xFE3
    147                           plusw2	equ	0xFDB
    148                           
    149                           	psect	cinit
-   150  000312                     __pcinit:
+   150  000310                     __pcinit:
    151                           	opt stack 0
-   152  000312                     start_initialization:
+   152  000310                     start_initialization:
    153                           	opt stack 0
-   154  000312                     __initialization:
+   154  000310                     __initialization:
    155                           	opt stack 0
    156                           
    157                           ; Clear objects allocated to COMRAM (17 bytes)
-   158  000312  EE00  F029         	lfsr	0,__pbssCOMRAM
-   159  000316  0E11               	movlw	17
-   160  000318                     clear_0:
-   161  000318  6AEE               	clrf	postinc0,c
-   162  00031A  06E8               	decf	wreg,f,c
-   163  00031C  E1FD               	bnz	clear_0
-   164  00031E                     end_of_initialization:
+   158  000310  EE00  F029         	lfsr	0,__pbssCOMRAM
+   159  000314  0E11               	movlw	17
+   160  000316                     clear_0:
+   161  000316  6AEE               	clrf	postinc0,c
+   162  000318  06E8               	decf	wreg,f,c
+   163  00031A  E1FD               	bnz	clear_0
+   164  00031C                     end_of_initialization:
    165                           	opt stack 0
-   166  00031E                     __end_of__initialization:
+   166  00031C                     __end_of__initialization:
    167                           	opt stack 0
-   168  00031E  0100               	movlb	0
-   169  000320  EF0B  F001         	goto	_main	;jump to C main() function
+   168  00031C  0100               	movlb	0
+   169  00031E  EF0B  F001         	goto	_main	;jump to C main() function
    170                           postinc0	equ	0xFEE
    171                           wreg	equ	0xFE8
    172                           plusw1	equ	0xFE3
@@ -230,14 +230,14 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    224                           
    225                           ; 2 bytes @ 0x12
    226  000013                     	ds	2
-   227  000015                     _setup_simple_serial$506:
+   227  000015                     _setup_simple_serial$187:
    228                           	opt stack 0
    229  000015                     ___wmul@multiplicand:
    230                           	opt stack 0
    231                           
    232                           ; 2 bytes @ 0x14
    233  000015                     	ds	2
-   234  000017                     _setup_simple_serial$507:
+   234  000017                     _setup_simple_serial$188:
    235                           	opt stack 0
    236  000017                     ___wmul@product:
    237                           	opt stack 0
@@ -318,64 +318,64 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    312 ;;
    313                           
    314                           	psect	text1
-   315  000276                     __ptext1:
+   315  000274                     __ptext1:
    316                           	opt stack 0
-   317  000276                     _setup_simple_serial:
+   317  000274                     _setup_simple_serial:
    318                           	opt stack 28
    319                           
    320                           ;incstack = 0
    321                           ;setup_simple_serial@baudrate_bits stored from wreg
-   322  000276  6E19               	movwf	setup_simple_serial@baudrate_bits,c
+   322  000274  6E19               	movwf	setup_simple_serial@baudrate_bits,c
    323                           
    324                           ;serial_pic.c: 30: ANSELHbits.ANS11 = 0;
-   325  000278  967F               	bcf	3967,3,c	;volatile
+   325  000276  967F               	bcf	3967,3,c	;volatile
    326                           
    327                           ;serial_pic.c: 31: TXSTA = (baudrate_bits & 0x04) ? 0x24: 0x20;
-   328  00027A  B419               	btfsc	setup_simple_serial@baudrate_bits,2,c
-   329  00027C  D004               	goto	l1166
-   330  00027E  0E00               	movlw	0
-   331  000280  6E16               	movwf	_setup_simple_serial$506+1,c
-   332  000282  0E20               	movlw	32
-   333  000284  D003               	goto	L1
-   334  000286                     l1166:
-   335  000286  0E00               	movlw	0
-   336  000288  6E16               	movwf	_setup_simple_serial$506+1,c
-   337  00028A  0E24               	movlw	36
-   338  00028C                     L1:
-   339  00028C  6E15               	movwf	_setup_simple_serial$506,c
-   340  00028E  D000               	goto	l1168
-   341  000290                     l1168:
-   342  000290  C015  FFAC         	movff	_setup_simple_serial$506,4012	;volatile
+   328  000278  B419               	btfsc	setup_simple_serial@baudrate_bits,2,c
+   329  00027A  D004               	goto	l1210
+   330  00027C  0E00               	movlw	0
+   331  00027E  6E16               	movwf	_setup_simple_serial$187+1,c
+   332  000280  0E20               	movlw	32
+   333  000282  D003               	goto	L1
+   334  000284                     l1210:
+   335  000284  0E00               	movlw	0
+   336  000286  6E16               	movwf	_setup_simple_serial$187+1,c
+   337  000288  0E24               	movlw	36
+   338  00028A                     L1:
+   339  00028A  6E15               	movwf	_setup_simple_serial$187,c
+   340  00028C  D000               	goto	l1212
+   341  00028E                     l1212:
+   342  00028E  C015  FFAC         	movff	_setup_simple_serial$187,4012	;volatile
    343                           
    344                           ;serial_pic.c: 32: RCSTA = 0x90;
-   345  000294  0E90               	movlw	144
-   346  000296  6EAB               	movwf	4011,c	;volatile
+   345  000292  0E90               	movlw	144
+   346  000294  6EAB               	movwf	4011,c	;volatile
    347                           
    348                           ;serial_pic.c: 33: BAUDCON = (baudrate_bits & 0x08) ? 0x08 : 0x00;
-   349  000298  B619               	btfsc	setup_simple_serial@baudrate_bits,3,c
-   350  00029A  D004               	goto	l1174
-   351  00029C  0E00               	movlw	0
-   352  00029E  6E18               	movwf	_setup_simple_serial$507+1,c
-   353  0002A0  0E00               	movlw	0
-   354  0002A2  D003               	goto	L2
-   355  0002A4                     l1174:
-   356  0002A4  0E00               	movlw	0
-   357  0002A6  6E18               	movwf	_setup_simple_serial$507+1,c
-   358  0002A8  0E08               	movlw	8
-   359  0002AA                     L2:
-   360  0002AA  6E17               	movwf	_setup_simple_serial$507,c
-   361  0002AC  D000               	goto	l1176
-   362  0002AE                     l1176:
-   363  0002AE  C017  FFB8         	movff	_setup_simple_serial$507,4024	;volatile
+   349  000296  B619               	btfsc	setup_simple_serial@baudrate_bits,3,c
+   350  000298  D004               	goto	l1218
+   351  00029A  0E00               	movlw	0
+   352  00029C  6E18               	movwf	_setup_simple_serial$188+1,c
+   353  00029E  0E00               	movlw	0
+   354  0002A0  D003               	goto	L2
+   355  0002A2                     l1218:
+   356  0002A2  0E00               	movlw	0
+   357  0002A4  6E18               	movwf	_setup_simple_serial$188+1,c
+   358  0002A6  0E08               	movlw	8
+   359  0002A8                     L2:
+   360  0002A8  6E17               	movwf	_setup_simple_serial$188,c
+   361  0002AA  D000               	goto	l1220
+   362  0002AC                     l1220:
+   363  0002AC  C017  FFB8         	movff	_setup_simple_serial$188,4024	;volatile
    364                           
    365                           ;serial_pic.c: 35: SPBRGH = baudrate_value >> 8;
-   366  0002B2  5014               	movf	setup_simple_serial@baudrate_value+1,w,c
-   367  0002B4  6EB0               	movwf	4016,c	;volatile
+   366  0002B0  5014               	movf	setup_simple_serial@baudrate_value+1,w,c
+   367  0002B2  6EB0               	movwf	4016,c	;volatile
    368                           
    369                           ;serial_pic.c: 36: SPBRG = baudrate_value;
-   370  0002B6  C013  FFAF         	movff	setup_simple_serial@baudrate_value,4015	;volatile
-   371  0002BA  0012               	return		;funcret
-   372  0002BC                     __end_of_setup_simple_serial:
+   370  0002B4  C013  FFAF         	movff	setup_simple_serial@baudrate_value,4015	;volatile
+   371  0002B8  0012               	return		;funcret
+   372  0002BA                     __end_of_setup_simple_serial:
    373                           	opt stack 0
    374                           postinc0	equ	0xFEE
    375                           wreg	equ	0xFE8
@@ -426,13 +426,13 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    420                           
    421                           ;incstack = 0
    422  000168  AE1B               	btfss	serial_send_data@size,7,c
-   423  00016A  D031               	goto	l1212
+   423  00016A  D031               	goto	l1256
    424                           
    425                           ;serial_pic.c: 87: for (i = 0; data[i] != 0; i++)
    426  00016C  0E00               	movlw	0
    427  00016E  6E1D               	movwf	serial_send_data@i,c
-   428  000170  D016               	goto	l1208
-   429  000172                     l1204:
+   428  000170  D016               	goto	l1252
+   429  000172                     l1248:
    430                           
    431                           ;serial_pic.c: 88: serial_send_byte(data[i]);
    432  000172  501D               	movf	serial_send_data@i,w,c
@@ -444,7 +444,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    438  00017E  6E16               	movwf	___wmul@multiplicand+1,c
    439  000180  0E01               	movlw	1
    440  000182  6E15               	movwf	___wmul@multiplicand,c
-   441  000184  EC75  F001         	call	___wmul	;wreg free
+   441  000184  EC74  F001         	call	___wmul	;wreg free
    442  000188  5013               	movf	?___wmul,w,c
    443  00018A  2419               	addwf	serial_send_data@data,w,c
    444  00018C  6ED9               	movwf	fsr2l,c
@@ -452,10 +452,10 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    446  000190  201A               	addwfc	serial_send_data@data+1,w,c
    447  000192  6EDA               	movwf	fsr2h,c
    448  000194  50DF               	movf	indf2,w,c
-   449  000196  EC92  F001         	call	_serial_send_byte
+   449  000196  EC91  F001         	call	_serial_send_byte
    450  00019A  2A1D               	incf	serial_send_data@i,f,c
-   451  00019C  D000               	goto	l1208
-   452  00019E                     l1208:
+   451  00019C  D000               	goto	l1252
+   452  00019E                     l1252:
    453  00019E  501D               	movf	serial_send_data@i,w,c
    454  0001A0  6E13               	movwf	___wmul@multiplier,c
    455  0001A2  6A14               	clrf	___wmul@multiplier+1,c
@@ -465,7 +465,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    459  0001AA  6E16               	movwf	___wmul@multiplicand+1,c
    460  0001AC  0E01               	movlw	1
    461  0001AE  6E15               	movwf	___wmul@multiplicand,c
-   462  0001B0  EC75  F001         	call	___wmul	;wreg free
+   462  0001B0  EC74  F001         	call	___wmul	;wreg free
    463  0001B4  5013               	movf	?___wmul,w,c
    464  0001B6  2419               	addwf	serial_send_data@data,w,c
    465  0001B8  6ED9               	movwf	fsr2l,c
@@ -474,21 +474,21 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    468  0001BE  6EDA               	movwf	fsr2h,c
    469  0001C0  50DF               	movf	indf2,w,c
    470  0001C2  A4D8               	btfss	status,2,c
-   471  0001C4  D7D6               	goto	l1204
+   471  0001C4  D7D6               	goto	l1248
    472                           
    473                           ;serial_pic.c: 89: serial_send_byte(0);
    474  0001C6  0E00               	movlw	0
-   475  0001C8  EC92  F001         	call	_serial_send_byte
+   475  0001C8  EC91  F001         	call	_serial_send_byte
    476                           
    477                           ;serial_pic.c: 90: } else {
    478  0001CC  0012               	return	
-   479  0001CE                     l1212:
+   479  0001CE                     l1256:
    480                           
    481                           ;serial_pic.c: 91: for (i = 0; i < size; i++)
    482  0001CE  0E00               	movlw	0
    483  0001D0  6E1D               	movwf	serial_send_data@i,c
-   484  0001D2  D016               	goto	l1218
-   485  0001D4                     l1214:
+   484  0001D2  D016               	goto	l1262
+   485  0001D4                     l1258:
    486                           
    487                           ;serial_pic.c: 92: serial_send_byte(data[i]);
    488  0001D4  501D               	movf	serial_send_data@i,w,c
@@ -500,7 +500,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    494  0001E0  6E16               	movwf	___wmul@multiplicand+1,c
    495  0001E2  0E01               	movlw	1
    496  0001E4  6E15               	movwf	___wmul@multiplicand,c
-   497  0001E6  EC75  F001         	call	___wmul	;wreg free
+   497  0001E6  EC74  F001         	call	___wmul	;wreg free
    498  0001EA  5013               	movf	?___wmul,w,c
    499  0001EC  2419               	addwf	serial_send_data@data,w,c
    500  0001EE  6ED9               	movwf	fsr2l,c
@@ -508,10 +508,10 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    502  0001F2  201A               	addwfc	serial_send_data@data+1,w,c
    503  0001F4  6EDA               	movwf	fsr2h,c
    504  0001F6  50DF               	movf	indf2,w,c
-   505  0001F8  EC92  F001         	call	_serial_send_byte
+   505  0001F8  EC91  F001         	call	_serial_send_byte
    506  0001FC  2A1D               	incf	serial_send_data@i,f,c
-   507  0001FE  D000               	goto	l1218
-   508  000200                     l1218:
+   507  0001FE  D000               	goto	l1262
+   508  000200                     l1262:
    509  000200  501D               	movf	serial_send_data@i,w,c
    510  000202  0A80               	xorlw	128
    511  000204  6E1C               	movwf	??_serial_send_data& (0+255),c
@@ -520,7 +520,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    514  00020A  5C1C               	subwf	??_serial_send_data& (0+255),w,c
    515  00020C  B0D8               	btfsc	status,0,c
    516  00020E  0012               	return	
-   517  000210  D7E1               	goto	l1214
+   517  000210  D7E1               	goto	l1258
    518  000212  0012               	return	
    519                           
    520                           ;serial_pic.c: 93: }
@@ -571,25 +571,25 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    565 ;;
    566                           
    567                           	psect	text3
-   568  000324                     __ptext3:
+   568  000322                     __ptext3:
    569                           	opt stack 0
-   570  000324                     _serial_send_byte:
+   570  000322                     _serial_send_byte:
    571                           	opt stack 27
    572                           
    573                           ;incstack = 0
    574                           ;serial_send_byte@byte stored from wreg
-   575  000324  6E13               	movwf	serial_send_byte@byte,c
+   575  000322  6E13               	movwf	serial_send_byte@byte,c
    576                           
    577                           ;serial_pic.c: 78: while (!TXIF);
-   578  000326  D000               	goto	l198
-   579  000328                     l198:
-   580  000328  A89E               	btfss	3998,4,c	;volatile
-   581  00032A  D7FE               	goto	l198
+   578  000324  D000               	goto	l104
+   579  000326                     l104:
+   580  000326  A89E               	btfss	3998,4,c	;volatile
+   581  000328  D7FE               	goto	l104
    582                           
    583                           ;serial_pic.c: 79: TXREG = byte;
-   584  00032C  C013  FFAD         	movff	serial_send_byte@byte,4013	;volatile
-   585  000330  0012               	return		;funcret
-   586  000332                     __end_of_serial_send_byte:
+   584  00032A  C013  FFAD         	movff	serial_send_byte@byte,4013	;volatile
+   585  00032E  0012               	return		;funcret
+   586  000330                     __end_of_serial_send_byte:
    587                           	opt stack 0
    588                           postinc0	equ	0xFEE
    589                           wreg	equ	0xFE8
@@ -644,13 +644,13 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    638                           
    639                           ;incstack = 0
    640  00009A  AE1B               	btfss	serial_get_data@size,7,c
-   641  00009C  D041               	goto	l1192
+   641  00009C  D041               	goto	l1236
    642                           
    643                           ;serial_pic.c: 65: for (i = 0; data[i] != 0; i++)
    644  00009E  0E00               	movlw	0
    645  0000A0  6E1D               	movwf	serial_get_data@i,c
-   646  0000A2  D016               	goto	l1188
-   647  0000A4                     l1184:
+   646  0000A2  D016               	goto	l1232
+   647  0000A4                     l1228:
    648                           
    649                           ;serial_pic.c: 66: data[i] = serial_get_byte();
    650  0000A4  501D               	movf	serial_get_data@i,w,c
@@ -662,18 +662,18 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    656  0000B0  6E16               	movwf	___wmul@multiplicand+1,c
    657  0000B2  0E01               	movlw	1
    658  0000B4  6E15               	movwf	___wmul@multiplicand,c
-   659  0000B6  EC75  F001         	call	___wmul	;wreg free
+   659  0000B6  EC74  F001         	call	___wmul	;wreg free
    660  0000BA  5013               	movf	?___wmul,w,c
    661  0000BC  2419               	addwf	serial_get_data@data,w,c
    662  0000BE  6ED9               	movwf	fsr2l,c
    663  0000C0  5014               	movf	?___wmul+1,w,c
    664  0000C2  201A               	addwfc	serial_get_data@data+1,w,c
    665  0000C4  6EDA               	movwf	fsr2h,c
-   666  0000C6  ECA0  F001         	call	_serial_get_byte	;wreg free
+   666  0000C6  EC9F  F001         	call	_serial_get_byte	;wreg free
    667  0000CA  6EDF               	movwf	indf2,c
    668  0000CC  2A1D               	incf	serial_get_data@i,f,c
-   669  0000CE  D000               	goto	l1188
-   670  0000D0                     l1188:
+   669  0000CE  D000               	goto	l1232
+   670  0000D0                     l1232:
    671  0000D0  501D               	movf	serial_get_data@i,w,c
    672  0000D2  6E13               	movwf	___wmul@multiplier,c
    673  0000D4  6A14               	clrf	___wmul@multiplier+1,c
@@ -683,7 +683,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    677  0000DC  6E16               	movwf	___wmul@multiplicand+1,c
    678  0000DE  0E01               	movlw	1
    679  0000E0  6E15               	movwf	___wmul@multiplicand,c
-   680  0000E2  EC75  F001         	call	___wmul	;wreg free
+   680  0000E2  EC74  F001         	call	___wmul	;wreg free
    681  0000E6  5013               	movf	?___wmul,w,c
    682  0000E8  2419               	addwf	serial_get_data@data,w,c
    683  0000EA  6ED9               	movwf	fsr2l,c
@@ -692,7 +692,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    686  0000F0  6EDA               	movwf	fsr2h,c
    687  0000F2  50DF               	movf	indf2,w,c
    688  0000F4  A4D8               	btfss	status,2,c
-   689  0000F6  D7D6               	goto	l1184
+   689  0000F6  D7D6               	goto	l1228
    690                           
    691                           ;serial_pic.c: 67: data[i] = 0;
    692  0000F8  501D               	movf	serial_get_data@i,w,c
@@ -704,7 +704,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    698  000104  6E16               	movwf	___wmul@multiplicand+1,c
    699  000106  0E01               	movlw	1
    700  000108  6E15               	movwf	___wmul@multiplicand,c
-   701  00010A  EC75  F001         	call	___wmul	;wreg free
+   701  00010A  EC74  F001         	call	___wmul	;wreg free
    702  00010E  5013               	movf	?___wmul,w,c
    703  000110  2419               	addwf	serial_get_data@data,w,c
    704  000112  6ED9               	movwf	fsr2l,c
@@ -716,13 +716,13 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    710                           
    711                           ;serial_pic.c: 68: } else {
    712  00011E  0012               	return	
-   713  000120                     l1192:
+   713  000120                     l1236:
    714                           
    715                           ;serial_pic.c: 69: for (i = 0; i < size; i++)
    716  000120  0E00               	movlw	0
    717  000122  6E1D               	movwf	serial_get_data@i,c
-   718  000124  D016               	goto	l1198
-   719  000126                     l1194:
+   718  000124  D016               	goto	l1242
+   719  000126                     l1238:
    720                           
    721                           ;serial_pic.c: 70: data[i] = serial_get_byte();
    722  000126  501D               	movf	serial_get_data@i,w,c
@@ -734,18 +734,18 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    728  000132  6E16               	movwf	___wmul@multiplicand+1,c
    729  000134  0E01               	movlw	1
    730  000136  6E15               	movwf	___wmul@multiplicand,c
-   731  000138  EC75  F001         	call	___wmul	;wreg free
+   731  000138  EC74  F001         	call	___wmul	;wreg free
    732  00013C  5013               	movf	?___wmul,w,c
    733  00013E  2419               	addwf	serial_get_data@data,w,c
    734  000140  6ED9               	movwf	fsr2l,c
    735  000142  5014               	movf	?___wmul+1,w,c
    736  000144  201A               	addwfc	serial_get_data@data+1,w,c
    737  000146  6EDA               	movwf	fsr2h,c
-   738  000148  ECA0  F001         	call	_serial_get_byte	;wreg free
+   738  000148  EC9F  F001         	call	_serial_get_byte	;wreg free
    739  00014C  6EDF               	movwf	indf2,c
    740  00014E  2A1D               	incf	serial_get_data@i,f,c
-   741  000150  D000               	goto	l1198
-   742  000152                     l1198:
+   741  000150  D000               	goto	l1242
+   742  000152                     l1242:
    743  000152  501D               	movf	serial_get_data@i,w,c
    744  000154  0A80               	xorlw	128
    745  000156  6E1C               	movwf	??_serial_get_data& (0+255),c
@@ -754,7 +754,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    748  00015C  5C1C               	subwf	??_serial_get_data& (0+255),w,c
    749  00015E  B0D8               	btfsc	status,0,c
    750  000160  0012               	return	
-   751  000162  D7E1               	goto	l1194
+   751  000162  D7E1               	goto	l1238
    752  000164  0012               	return	
    753                           
    754                           ;serial_pic.c: 71: }
@@ -803,24 +803,24 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    797 ;;
    798                           
    799                           	psect	text5
-   800  000340                     __ptext5:
+   800  00033E                     __ptext5:
    801                           	opt stack 0
-   802  000340                     _serial_get_byte:
+   802  00033E                     _serial_get_byte:
    803                           	opt stack 27
    804                           
    805                           ;serial_pic.c: 55: while (!RCIF);
    806                           
    807                           ;incstack = 0
-   808  000340  D000               	goto	l181
-   809  000342                     l181:
-   810  000342  AA9E               	btfss	3998,5,c	;volatile
-   811  000344  D7FE               	goto	l181
+   808  00033E  D000               	goto	l87
+   809  000340                     l87:
+   810  000340  AA9E               	btfss	3998,5,c	;volatile
+   811  000342  D7FE               	goto	l87
    812                           
    813                           ;serial_pic.c: 57: return RCREG;
-   814  000346  50AE               	movf	4014,w,c	;volatile
-   815  000348  0012               	return	
-   816  00034A  0012               	return		;funcret
-   817  00034C                     __end_of_serial_get_byte:
+   814  000344  50AE               	movf	4014,w,c	;volatile
+   815  000346  0012               	return	
+   816  000348  0012               	return		;funcret
+   817  00034A                     __end_of_serial_get_byte:
    818                           	opt stack 0
    819                           postinc0	equ	0xFEE
    820                           wreg	equ	0xFE8
@@ -860,37 +860,37 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    854 ;; This function is called by:
    855 ;;		_serial_get_data
    856 ;;		_serial_send_data
-   857 ;;		_spi_send_data
-   858 ;;		_spi_master_get_data
-   859 ;;		_spi_slave_get_data
-   860 ;;		_serial_send_buffer
+   857 ;;		_serial_send_buffer
+   858 ;;		_spi_send_data
+   859 ;;		_spi_master_get_data
+   860 ;;		_spi_slave_get_data
    861 ;; This function uses a non-reentrant model
    862 ;;
    863                           
    864                           	psect	text6
-   865  0002EA                     __ptext6:
+   865  0002E8                     __ptext6:
    866                           	opt stack 0
-   867  0002EA                     ___wmul:
+   867  0002E8                     ___wmul:
    868                           	opt stack 27
    869                           
    870                           ;incstack = 0
-   871  0002EA  5013               	movf	___wmul@multiplier,w,c
-   872  0002EC  0215               	mulwf	___wmul@multiplicand,c
-   873  0002EE  CFF3 F017          	movff	prodl,___wmul@product
-   874  0002F2  CFF4 F018          	movff	prodh,___wmul@product+1
-   875  0002F6  5013               	movf	___wmul@multiplier,w,c
-   876  0002F8  0216               	mulwf	___wmul@multiplicand+1,c
-   877  0002FA  50F3               	movf	prodl,w,c
-   878  0002FC  2618               	addwf	___wmul@product+1,f,c
-   879  0002FE  5014               	movf	___wmul@multiplier+1,w,c
-   880  000300  0215               	mulwf	___wmul@multiplicand,c
-   881  000302  50F3               	movf	prodl,w,c
-   882  000304  2618               	addwf	___wmul@product+1,f,c
-   883  000306  C017  F013         	movff	___wmul@product,?___wmul
-   884  00030A  C018  F014         	movff	___wmul@product+1,?___wmul+1
-   885  00030E  0012               	return	
-   886  000310  0012               	return		;funcret
-   887  000312                     __end_of___wmul:
+   871  0002E8  5013               	movf	___wmul@multiplier,w,c
+   872  0002EA  0215               	mulwf	___wmul@multiplicand,c
+   873  0002EC  CFF3 F017          	movff	prodl,___wmul@product
+   874  0002F0  CFF4 F018          	movff	prodh,___wmul@product+1
+   875  0002F4  5013               	movf	___wmul@multiplier,w,c
+   876  0002F6  0216               	mulwf	___wmul@multiplicand+1,c
+   877  0002F8  50F3               	movf	prodl,w,c
+   878  0002FA  2618               	addwf	___wmul@product+1,f,c
+   879  0002FC  5014               	movf	___wmul@multiplier+1,w,c
+   880  0002FE  0215               	mulwf	___wmul@multiplicand,c
+   881  000300  50F3               	movf	prodl,w,c
+   882  000302  2618               	addwf	___wmul@product+1,f,c
+   883  000304  C017  F013         	movff	___wmul@product,?___wmul
+   884  000308  C018  F014         	movff	___wmul@product+1,?___wmul+1
+   885  00030C  0012               	return	
+   886  00030E  0012               	return		;funcret
+   887  000310                     __end_of___wmul:
    888                           	opt stack 0
    889                           prodh	equ	0xFF4
    890                           prodl	equ	0xFF3
@@ -905,7 +905,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    899                           
    900 ;; *************** function _isr *****************
    901 ;; Defined at:
-   902 ;;		line 84 in file "main.c"
+   902 ;;		line 82 in file "main.c"
    903 ;; Parameters:    Size  Location     Type
    904 ;;		None
    905 ;; Auto vars:     Size  Location     Type
@@ -956,23 +956,23 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    950  000038  CFF8 F010          	movff	tblptru,??_isr+12
    951  00003C  CFF5 F011          	movff	tablat,??_isr+13
    952                           
-   953                           ;main.c: 86: uint8_t byte;
-   954                           ;main.c: 87: if (serial_peek_receive(1, &byte))
+   953                           ;main.c: 84: uint8_t byte;
+   954                           ;main.c: 85: if (serial_peek_receive(1, &byte))
    955  000040  0E12               	movlw	low isr@byte
    956  000042  6E01               	movwf	serial_peek_receive@byte,c
    957  000044  0E00               	movlw	high isr@byte
    958  000046  6E02               	movwf	serial_peek_receive@byte+1,c
    959  000048  0E01               	movlw	1
-   960  00004A  EC5E  F001         	call	_serial_peek_receive
+   960  00004A  EC5D  F001         	call	_serial_peek_receive
    961  00004E  0900               	iorlw	0
    962  000050  B4D8               	btfsc	status,2,c
-   963  000052  D004               	goto	i2l36
+   963  000052  D004               	goto	i2l33
    964                           
-   965                           ;main.c: 88: serial_send_byte(byte);
+   965                           ;main.c: 86: serial_send_byte(byte);
    966  000054  5012               	movf	isr@byte,w,c
-   967  000056  EC99  F001         	call	i2_serial_send_byte
-   968  00005A  D000               	goto	i2l36
-   969  00005C                     i2l36:
+   967  000056  EC98  F001         	call	i2_serial_send_byte
+   968  00005A  D000               	goto	i2l33
+   969  00005C                     i2l33:
    970  00005C  C011  FFF5         	movff	??_isr+13,tablat
    971  000060  C010  FFF8         	movff	??_isr+12,tblptru
    972  000064  C00F  FFF7         	movff	??_isr+11,tblptrh
@@ -1041,25 +1041,25 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1035 ;;
   1036                           
   1037                           	psect	text8
-  1038  000332                     __ptext8:
+  1038  000330                     __ptext8:
   1039                           	opt stack 0
-  1040  000332                     i2_serial_send_byte:
+  1040  000330                     i2_serial_send_byte:
   1041                           	opt stack 27
   1042                           
   1043                           ;incstack = 0
   1044                           ;i2serial_send_byte@byte stored from wreg
-  1045  000332  6E01               	movwf	i2serial_send_byte@byte,c
+  1045  000330  6E01               	movwf	i2serial_send_byte@byte,c
   1046                           
   1047                           ;serial_pic.c: 78: while (!TXIF);
-  1048  000334  D000               	goto	i2l198
-  1049  000336                     i2l198:
-  1050  000336  A89E               	btfss	3998,4,c	;volatile
-  1051  000338  D7FE               	goto	i2l198
+  1048  000332  D000               	goto	i2l104
+  1049  000334                     i2l104:
+  1050  000334  A89E               	btfss	3998,4,c	;volatile
+  1051  000336  D7FE               	goto	i2l104
   1052                           
   1053                           ;serial_pic.c: 79: TXREG = byte;
-  1054  00033A  C001  FFAD         	movff	i2serial_send_byte@byte,4013	;volatile
-  1055  00033E  0012               	return		;funcret
-  1056  000340                     __end_ofi2_serial_send_byte:
+  1054  000338  C001  FFAD         	movff	i2serial_send_byte@byte,4013	;volatile
+  1055  00033C  0012               	return		;funcret
+  1056  00033E                     __end_ofi2_serial_send_byte:
   1057                           	opt stack 0
   1058                           pclatu	equ	0xFFB
   1059                           pclath	equ	0xFFA
@@ -1114,52 +1114,52 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1108 ;;
   1109                           
   1110                           	psect	text9
-  1111  0002BC                     __ptext9:
+  1111  0002BA                     __ptext9:
   1112                           	opt stack 0
-  1113  0002BC                     _serial_peek_receive:
+  1113  0002BA                     _serial_peek_receive:
   1114                           	opt stack 27
   1115                           
   1116                           ;incstack = 0
   1117                           ;serial_peek_receive@get_byte stored from wreg
-  1118  0002BC  6E03               	movwf	serial_peek_receive@get_byte,c
+  1118  0002BA  6E03               	movwf	serial_peek_receive@get_byte,c
   1119                           
   1120                           ;serial_pic.c: 41: if (get_byte) {
-  1121  0002BE  5003               	movf	serial_peek_receive@get_byte,w,c
-  1122  0002C0  B4D8               	btfsc	status,2,c
-  1123  0002C2  D00E               	goto	i2l1236
+  1121  0002BC  5003               	movf	serial_peek_receive@get_byte,w,c
+  1122  0002BE  B4D8               	btfsc	status,2,c
+  1123  0002C0  D00E               	goto	i2l1280
   1124                           
   1125                           ;serial_pic.c: 42: if (RCIF) {
-  1126  0002C4  AA9E               	btfss	3998,5,c	;volatile
-  1127  0002C6  D009               	goto	i2l1232
+  1126  0002C2  AA9E               	btfss	3998,5,c	;volatile
+  1127  0002C4  D009               	goto	i2l1276
   1128                           
   1129                           ;serial_pic.c: 43: *byte = RCREG;
-  1130  0002C8  C001  FFD9         	movff	serial_peek_receive@byte,fsr2l
-  1131  0002CC  C002  FFDA         	movff	serial_peek_receive@byte+1,fsr2h
-  1132  0002D0  CFAE FFDF          	movff	4014,indf2	;volatile
+  1130  0002C6  C001  FFD9         	movff	serial_peek_receive@byte,fsr2l
+  1131  0002CA  C002  FFDA         	movff	serial_peek_receive@byte+1,fsr2h
+  1132  0002CE  CFAE FFDF          	movff	4014,indf2	;volatile
   1133                           
   1134                           ;serial_pic.c: 44: return 1;
-  1135  0002D4  0E01               	movlw	1
-  1136  0002D6  0012               	return	
+  1135  0002D2  0E01               	movlw	1
+  1136  0002D4  0012               	return	
   1137                           
   1138                           ;serial_pic.c: 45: } else {
-  1139  0002D8  D003               	goto	i2l1236
-  1140  0002DA                     i2l1232:
+  1139  0002D6  D003               	goto	i2l1280
+  1140  0002D8                     i2l1276:
   1141                           
   1142                           ;serial_pic.c: 46: return 0;
-  1143  0002DA  0E00               	movlw	0
-  1144  0002DC  0012               	return	
-  1145  0002DE  D000               	goto	i2l1236
-  1146  0002E0                     i2l1236:
+  1143  0002D8  0E00               	movlw	0
+  1144  0002DA  0012               	return	
+  1145  0002DC  D000               	goto	i2l1280
+  1146  0002DE                     i2l1280:
   1147                           
   1148                           ;serial_pic.c: 47: }
   1149                           ;serial_pic.c: 48: }
   1150                           ;serial_pic.c: 50: return (RCIF) ? 1 : 0;
-  1151  0002E0  0E00               	movlw	0
-  1152  0002E2  BA9E               	btfsc	3998,5,c	;volatile
-  1153  0002E4  0E01               	movlw	1
-  1154  0002E6  0012               	return	
-  1155  0002E8  0012               	return		;funcret
-  1156  0002EA                     __end_of_serial_peek_receive:
+  1151  0002DE  0E00               	movlw	0
+  1152  0002E0  BA9E               	btfsc	3998,5,c	;volatile
+  1153  0002E2  0E01               	movlw	1
+  1154  0002E4  0012               	return	
+  1155  0002E6  0012               	return		;funcret
+  1156  0002E8                     __end_of_serial_peek_receive:
   1157                           	opt stack 0
   1158  0000                     pclatu	equ	0xFFB
   1159                           pclath	equ	0xFFA
@@ -1249,7 +1249,7 @@ Pointer List with Targets:
     serial_peek_receive@byte	PTR unsigned char  size(2) Largest target is 1
 		 -> isr@byte(COMRAM[1]), 
 
-    S405interrupt_serial$data	PTR unsigned char  size(2) Largest target is 0
+    S70interrupt_serial$data	PTR unsigned char  size(2) Largest target is 0
 
     interrupt_data.data	PTR unsigned char  size(2) Largest target is 0
 
@@ -1358,102 +1358,102 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
-Symbol Table                                                                                   Mon Jul 27 15:26:49 2015
+Symbol Table                                                                                   Tue Jul 28 13:51:58 2015
 
-                      _SSPSTATbits 000FC7                                 l30 0270  
-       __end_ofi2_serial_send_byte 0340                ___wmul@multiplicand 0015  
+                      _SSPSTATbits 000FC7                                 l87 0340  
+       __end_ofi2_serial_send_byte 033E                ___wmul@multiplicand 0015  
                      __CFG_CP0$OFF 000000                       __CFG_CP1$OFF 000000  
-                              l181 0342                                l198 0328  
-                     __CFG_CPB$OFF 000000                       __CFG_CPD$OFF 000000  
-                              u671 023E                                u877 021C  
-                              _isr 0008                       __CFG_BORV$19 000000  
-                              wreg 000FE8                       __CFG_FOSC$HS 000000  
-                     __CFG_LVP$OFF 000000                               l1204 0172  
-                             l1212 01CE                               l1214 01D4  
-                             l1208 019E                               l1218 0200  
-                             l1252 024E                               l1174 02A4  
-                             l1166 0286                               l1184 00A4  
-                             l1192 0120                               l1176 02AE  
-                             l1168 0290                               l1194 0126  
-                             l1188 00D0                               l1198 0152  
-                             ?_isr 0001                               _RCIE 007CED  
-                             _RCIF 007CF5                               i2l36 005C  
-                             _TXIE 007CEC                               _TXIF 007CF4  
-                             _main 0216                               fsr0h 000FEA  
-                             fsr1h 000FE2                               fsr0l 000FE9  
-                             fsr2h 000FDA                               fsr1l 000FE1  
-                             indf2 000FDF                               fsr2l 000FD9  
-                             pclat 000FFA                               prodh 000FF4  
-                             prodl 000FF3                               start 0096  
-                    __CFG_IESO$OFF 000000                      __CFG_MCLRE$ON 000000  
-                     ___param_bank 000010               serial_send_data@data 0019  
-          __end_of_serial_get_data 0168               serial_send_data@size 001B  
-          __end_of_serial_get_byte 034C                              ??_isr 0004  
-                            ?_main 0001                              i2l198 0336  
-                            _RCREG 000FAE                     __CFG_BBSIZ$OFF 000000  
-                            _RCSTA 000FAB                              _SPBRG 000FAF  
-                            _SSPIF 007CF3                              _TXREG 000FAD  
-                            _TXSTA 000FAC                      __CFG_WRT0$OFF 000000  
-                    __CFG_WRT1$OFF 000000                     __CFG_EBTR0$OFF 000000  
-                   __CFG_FCMEN$OFF 000000                     __CFG_EBTR1$OFF 000000  
-                    __CFG_WRTB$OFF 000000                      __CFG_WRTC$OFF 000000  
-                    __CFG_WRTD$OFF 000000                     __CFG_EBTRB$OFF 000000  
-                            tablat 000FF5               serial_send_byte@byte 0013  
-                            plusw1 000FE3                              plusw2 000FDB  
-                            status 000FD8                     __CFG_HFOFST$ON 000000  
-                serial_send_data@i 001D                    __initialization 0312  
-                     __end_of_main 0276                     __CFG_PCLKEN$ON 000000  
-                           ??_main 001E                      __activetblptr 000000  
-                   __CFG_PLLEN$OFF 000000                             i2l1232 02DA  
-                           i2l1236 02E0                     __CFG_WDTEN$OFF 000000  
-                           _INTCON 000FF2                             _SPBRGH 000FB0  
-                           _SSPBUF 000FC9           __end_of_serial_send_data 0216  
-         __end_of_serial_send_byte 0332                     __CFG_XINST$OFF 000000  
-                 ?_serial_get_data 0019                             ___wmul 02EA  
-                   __CFG_STVREN$ON 000000                   ?_serial_get_byte 0001  
-                           clear_0 0318        __end_of_setup_simple_serial 02BC  
-                           tblptrh 000FF7                             tblptrl 000FF6  
-                           tblptru 000FF8                         __accesstop 0060  
-          __end_of__initialization 031E                      ___rparam_used 000001  
-     __size_of_serial_peek_receive 002E                     __pcstackCOMRAM 0001  
-               i2_serial_send_byte 0332                ?i2_serial_send_byte 0001  
-          serial_peek_receive@byte 0001                            ?___wmul 0013  
-                          _BAUDCON 000FB8               ??i2_serial_send_byte 0001  
-                          _SSPCON1 000FC6                            _SSPSTAT 000FC7  
-                  __CFG_PWRTEN$OFF 000000                            __Hparam 0000  
-                          __Lparam 0000                    __size_of___wmul 0028  
-                       _dummy_byte 0039                            __pcinit 0312  
-                          __ramtop 0100                            __ptext0 0216  
-                          __ptext1 0276                            __ptext2 0168  
-                          __ptext3 0324                            __ptext4 009A  
-                          __ptext5 0340                            __ptext6 02EA  
-                          __ptext8 0332                            __ptext9 02BC  
-                     __size_of_isr 008E               end_of_initialization 031E  
-                          isr@byte 0012                  ?_serial_send_data 0019  
-                ?_serial_send_byte 0001                 ??_serial_send_data 001C  
-               ??_serial_send_byte 0013                          _RCSTAbits 000FAB  
-                          postinc0 000FEE                _serial_peek_receive 02BC  
-                        _TRISBbits 000F93                          _TRISCbits 000F94  
-             ?_serial_peek_receive 0001                     __end_of___wmul 0312  
-         __size_of_serial_get_data 00CE           __size_of_serial_get_byte 000C  
-              start_initialization 0312                        __end_of_isr 0096  
-     __size_of_setup_simple_serial 0046              ??_serial_peek_receive 0003  
-                         ??___wmul 0017                        __pbssCOMRAM 0029  
-                        __pintcode 0008        serial_peek_receive@get_byte 0003  
-      __size_ofi2_serial_send_byte 000E   setup_simple_serial@baudrate_bits 0019  
-                ??_serial_get_data 001C                  ??_serial_get_byte 0013  
-           i2serial_send_byte@byte 0001                     ___wmul@product 0017  
-                 __CFG_WDTPS$32768 000000                          main@F3920 0029  
-                ___wmul@multiplier 0013          __size_of_serial_send_data 00AE  
-        __size_of_serial_send_byte 000E                           __Hrparam 0000  
-                         __Lrparam 0000                 __CFG_BOREN$SBORDIS 000000  
-              serial_get_data@data 0019                serial_get_data@size 001B  
-              _setup_simple_serial 0276                         _ANSELHbits 000F7F  
-             ?_setup_simple_serial 0013                      __size_of_main 0060  
-                         main@data 001F        __end_of_serial_peek_receive 02EA  
-            ??_setup_simple_serial 0015                           intlevel2 0000  
-                 _serial_send_data 0168                    _serial_get_data 009A  
-                 _serial_send_byte 0324                    _serial_get_byte 0340  
-                   _interrupt_data 0033                        _SSPCON1bits 000FC6  
-                 serial_get_data@i 001D  setup_simple_serial@baudrate_value 0013  
-          _setup_simple_serial$506 0015            _setup_simple_serial$507 0017  
+                              l104 0326                       __CFG_CPB$OFF 000000  
+                     __CFG_CPD$OFF 000000                                u691 023E  
+                              u897 021C                                _isr 0008  
+                     __CFG_BORV$19 000000                                wreg 000FE8  
+                     __CFG_FOSC$HS 000000                       __CFG_LVP$OFF 000000  
+                             l1210 0284                               l1220 02AC  
+                             l1212 028E                               l1232 00D0  
+                             l1242 0152                               l1218 02A2  
+                             l1228 00A4                               l1236 0120  
+                             l1252 019E                               l1238 0126  
+                             l1262 0200                               l1248 0172  
+                             l1256 01CE                               l1258 01D4  
+                             l1296 024E                               ?_isr 0001  
+                             _RCIE 007CED                               _RCIF 007CF5  
+                             i2l33 005C                               _TXIE 007CEC  
+                             _TXIF 007CF4                               _main 0216  
+                             fsr0h 000FEA                               fsr1h 000FE2  
+                             fsr0l 000FE9                               fsr2h 000FDA  
+                             fsr1l 000FE1                               indf2 000FDF  
+                             fsr2l 000FD9                               pclat 000FFA  
+                             prodh 000FF4                               prodl 000FF3  
+                             start 0096                      __CFG_IESO$OFF 000000  
+                    __CFG_MCLRE$ON 000000                       ___param_bank 000010  
+             serial_send_data@data 0019            __end_of_serial_get_data 0168  
+             serial_send_data@size 001B            __end_of_serial_get_byte 034A  
+                            ??_isr 0004                              ?_main 0001  
+                            i2l104 0334                              _RCREG 000FAE  
+                   __CFG_BBSIZ$OFF 000000                              _RCSTA 000FAB  
+                            _SPBRG 000FAF                              _SSPIF 007CF3  
+                            _TXREG 000FAD                              _TXSTA 000FAC  
+                    __CFG_WRT0$OFF 000000                      __CFG_WRT1$OFF 000000  
+                   __CFG_EBTR0$OFF 000000                     __CFG_FCMEN$OFF 000000  
+                   __CFG_EBTR1$OFF 000000                      __CFG_WRTB$OFF 000000  
+                    __CFG_WRTC$OFF 000000                      __CFG_WRTD$OFF 000000  
+                   __CFG_EBTRB$OFF 000000                              tablat 000FF5  
+             serial_send_byte@byte 0013                              plusw1 000FE3  
+                            plusw2 000FDB                              status 000FD8  
+                   __CFG_HFOFST$ON 000000                  serial_send_data@i 001D  
+                  __initialization 0310                       __end_of_main 0274  
+                   __CFG_PCLKEN$ON 000000                             ??_main 001E  
+                    __activetblptr 000000                     __CFG_PLLEN$OFF 000000  
+                           i2l1280 02DE                             i2l1276 02D8  
+                   __CFG_WDTEN$OFF 000000                             _INTCON 000FF2  
+                           _SPBRGH 000FB0                             _SSPBUF 000FC9  
+         __end_of_serial_send_data 0216           __end_of_serial_send_byte 0330  
+                   __CFG_XINST$OFF 000000                   ?_serial_get_data 0019  
+                           ___wmul 02E8                     __CFG_STVREN$ON 000000  
+                 ?_serial_get_byte 0001                             clear_0 0316  
+      __end_of_setup_simple_serial 02BA                             tblptrh 000FF7  
+                           tblptrl 000FF6                             tblptru 000FF8  
+                       __accesstop 0060            __end_of__initialization 031C  
+                    ___rparam_used 000001       __size_of_serial_peek_receive 002E  
+                   __pcstackCOMRAM 0001                 i2_serial_send_byte 0330  
+              ?i2_serial_send_byte 0001            serial_peek_receive@byte 0001  
+                          ?___wmul 0013                            _BAUDCON 000FB8  
+             ??i2_serial_send_byte 0001                            _SSPCON1 000FC6  
+                          _SSPSTAT 000FC7                    __CFG_PWRTEN$OFF 000000  
+                          __Hparam 0000                            __Lparam 0000  
+                  __size_of___wmul 0028                         _dummy_byte 0039  
+                          __pcinit 0310                            __ramtop 0100  
+                          __ptext0 0216                            __ptext1 0274  
+                          __ptext2 0168                            __ptext3 0322  
+                          __ptext4 009A                            __ptext5 033E  
+                          __ptext6 02E8                            __ptext8 0330  
+                          __ptext9 02BA                       __size_of_isr 008E  
+             end_of_initialization 031C                            isr@byte 0012  
+                ?_serial_send_data 0019                  ?_serial_send_byte 0001  
+               ??_serial_send_data 001C                 ??_serial_send_byte 0013  
+                        _RCSTAbits 000FAB                            postinc0 000FEE  
+              _serial_peek_receive 02BA                          _TRISBbits 000F93  
+                        _TRISCbits 000F94               ?_serial_peek_receive 0001  
+                   __end_of___wmul 0310           __size_of_serial_get_data 00CE  
+         __size_of_serial_get_byte 000C                start_initialization 0310  
+                      __end_of_isr 0096       __size_of_setup_simple_serial 0046  
+            ??_serial_peek_receive 0003                           ??___wmul 0017  
+                      __pbssCOMRAM 0029                          __pintcode 0008  
+      serial_peek_receive@get_byte 0003        __size_ofi2_serial_send_byte 000E  
+ setup_simple_serial@baudrate_bits 0019                  ??_serial_get_data 001C  
+                ??_serial_get_byte 0013             i2serial_send_byte@byte 0001  
+                   ___wmul@product 0017                   __CFG_WDTPS$32768 000000  
+                        main@F3920 0029                  ___wmul@multiplier 0013  
+        __size_of_serial_send_data 00AE          __size_of_serial_send_byte 000E  
+                         __Hrparam 0000                           __Lrparam 0000  
+               __CFG_BOREN$SBORDIS 000000                serial_get_data@data 0019  
+              serial_get_data@size 001B                _setup_simple_serial 0274  
+                       _ANSELHbits 000F7F               ?_setup_simple_serial 0013  
+                    __size_of_main 005E                           main@data 001F  
+      __end_of_serial_peek_receive 02E8              ??_setup_simple_serial 0015  
+                         intlevel2 0000                   _serial_send_data 0168  
+                  _serial_get_data 009A                   _serial_send_byte 0322  
+                  _serial_get_byte 033E                     _interrupt_data 0033  
+                      _SSPCON1bits 000FC6                   serial_get_data@i 001D  
+setup_simple_serial@baudrate_value 0013            _setup_simple_serial$187 0015  
+          _setup_simple_serial$188 0017  

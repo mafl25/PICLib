@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Manuel/Documents/PICLibrary/PICLibraries.X/serial.h</file>
-            <file>file:/C:/Users/Manuel/Documents/PICLibrary/PICLibraries.X/serial.c</file>
-            <file>file:/C:/Users/Manuel/Documents/PICLibrary/PICLibraries.X/main.c</file>
+            <file>file:/C:/Users/Manuel/Documents/PICLibrary/PICLibraries.X/circular_buffer.c</file>
+            <file>file:/C:/Users/Manuel/Documents/PICLibrary/PICLibraries.X/serial_pic.c</file>
+            <file>file:/C:/Users/Manuel/Documents/PICLibrary/PICLibraries.X/circular_buffer.h</file>
+            <file>file:/C:/Users/Manuel/Documents/PICLibrary/PICLibraries.X/spi_pic.c</file>
         </group>
     </open-files>
 </project-private>

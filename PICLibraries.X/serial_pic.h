@@ -84,6 +84,14 @@
 #define NONE            0x00
 
 
+struct interrupt_serial 
+{
+    bool tx_int_enable;
+    uint8_t *data;
+    int8_t length;
+    int8_t position;
+};
+
 /*
  * The function "setup_serial" is used to initialize the serial port. To 
  * configure it, used the previous masks on the first three parameters. Use the 

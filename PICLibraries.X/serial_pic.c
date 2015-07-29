@@ -1,15 +1,5 @@
 #include "serial_pic.h"
 
-struct interrupt_serial 
-{
-    bool tx_int_enable;
-    uint8_t *data;
-    int8_t length;
-    int8_t position;
-};
-
-static struct interrupt_serial interrupt_data;
-
 void setup_serial(uint8_t TXSTA_reg, uint8_t RCSTA_reg,  uint8_t BAUDCON_reg,
                   uint16_t baudrate_value)
 {
@@ -95,7 +85,8 @@ int8_t serial_send_data(uint8_t *data, int8_t size)
     return i;
 }
 
-void serial_interrupts(uint8_t interrupts)
+void serial_interrupts(uint8_t interrupts, 
+                       struct interrupt_serial volatile *interrupt_data)
 {
     if (interrupts & (RX_INTERRUPT | TX_INTERRUPT)) {
         INTCON |= 0xC0;
@@ -104,7 +95,8 @@ void serial_interrupts(uint8_t interrupts)
     }
 }
 
-void serial_disable_interrupts(uint8_t interrupts, bool all_interrupts)
+void serial_disable_interrupts(uint8_t interrupts, bool all_interrupts,
+                               struct interrupt_serial volatile *interrupt_data)
 {
     if (all_interrupts)
         INTCON &= 0x3F;
@@ -116,7 +108,8 @@ void serial_disable_interrupts(uint8_t interrupts, bool all_interrupts)
         interrupt_data.tx_int_enable = false;
 }
 
-void serial_load_buffer(uint8_t *buffer, int8_t size)
+void serial_load_buffer(uint8_t *buffer, int8_t size, 
+                        struct interrupt_serial volatile *interrupt_data)
 {
     if (interrupt_data.tx_int_enable) {
         interrupt_data.data = buffer;
@@ -127,7 +120,7 @@ void serial_load_buffer(uint8_t *buffer, int8_t size)
     }
 }
 
-int8_t serial_send_buffer(void)
+int8_t serial_send_buffer(struct interrupt_serial volatile *interrupt_data)
 {   
     if (TXIF && TXIE) {
         if (interrupt_data.length < 0) {

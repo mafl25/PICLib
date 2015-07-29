@@ -149,7 +149,8 @@ int8_t serial_send_data(uint8_t *data, int8_t size);
  * the RX_INTERRUPT and TX_INTERRUPT masks to select which interrupts to 
  * activate. These masks should be OR'ed in the "interrupts" parameter.
  */
-void serial_interrupts(uint8_t interrupts);
+void serial_interrupts(uint8_t interrupts, 
+                       struct interrupt_serial volatile *interrupt_data);
 
 /*
  * The function "serial_disable_interrupts" disables the serial interrupts.
@@ -158,7 +159,8 @@ void serial_interrupts(uint8_t interrupts);
  * "all_interrupts" if you want to disable all interrupts in the PIC, not only 
  * serial related interrupts.
  */
-void serial_disable_interrupts(uint8_t interrupts, bool all_interrupts);
+void serial_disable_interrupts(uint8_t interrupts, bool all_interrupts,
+                               struct interrupt_serial volatile *interrupt_data);
 
 /*
  * The function "serial_load_buffer" is used when transmit interrupts are 
@@ -166,14 +168,15 @@ void serial_disable_interrupts(uint8_t interrupts, bool all_interrupts);
  * function "serial_send_buffer" will send "size" amount of bytes. If size 
  * equals -1, then it will send bytes until a 0 byte is found.
  */
-void serial_load_buffer(uint8_t *buffer, int8_t size);
+void serial_load_buffer(uint8_t *buffer, int8_t size, 
+                        struct interrupt_serial volatile *interrupt_data);
 
 /*
  * The function "serial_send_buffer" is to be used in the interrupt handler. It
  * will send the data loaded by "serial_load_buffer", one byte at the time. It
  * returns the amount of bytes sent so far.
  */
-int8_t serial_send_buffer(void);
+int8_t serial_send_buffer(struct interrupt_serial volatile *interrupt_data);
 
 
 /*

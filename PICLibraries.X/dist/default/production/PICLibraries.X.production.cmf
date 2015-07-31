@@ -11,11 +11,6 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
-idloc IDLOC 0 200000 200000 8 1
-reset_vec CODE 0 0 0 4 1
-end_init CODE 0 96 96 4 1
-config CONFIG 0 300000 300000 E 1
 $dist/default/production\PICLibraries.X.production.obj
 cinit CODE 0 310 310 12 1
 text0 CODE 0 216 216 5E 1
@@ -29,7 +24,12 @@ text8 CODE 0 330 330 E 1
 text9 CODE 0 2BA 2BA 2E 1
 cstackCOMRAM COMRAM 1 1 1 28 1
 intcode CODE 0 8 8 8E 1
-bssCOMRAM COMRAM 1 29 29 11 1
+bssCOMRAM COMRAM 1 29 29 B 1
+$C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
+idloc IDLOC 0 200000 200000 8 1
+reset_vec CODE 0 0 0 4 1
+end_init CODE 0 96 96 4 1
+config CONFIG 0 300000 300000 E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -45,8 +45,8 @@ STACK 60-FF 1
 SMALLCONST 34A-1FFF 1
 CODE 4-7 1
 CODE 34A-1FFF 1
-BIGRAM 3A-FF 1
-COMRAM 3A-5F 1
+BIGRAM 34-FF 1
+COMRAM 34-5F 1
 EEDATA F00000-F000FF 1
 MEDIUMCONST 34A-1FFF 1
 # %LINETAB Section
@@ -68,28 +68,28 @@ $dist/default/production\PICLibraries.X.production.obj
 40 intcode CODE >85:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\main.c
 54 intcode CODE >86:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\main.c
 5C intcode CODE >87:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\main.c
-9A text4 CODE >60:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-9A text4 CODE >64:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-9E text4 CODE >65:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-A4 text4 CODE >66:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-CC text4 CODE >65:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-F8 text4 CODE >67:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-11E text4 CODE >68:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-120 text4 CODE >69:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-126 text4 CODE >70:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-14E text4 CODE >69:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-166 text4 CODE >74:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-168 text2 CODE >82:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-168 text2 CODE >86:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-16C text2 CODE >87:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-172 text2 CODE >88:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-19A text2 CODE >87:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-1C6 text2 CODE >89:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-1CC text2 CODE >90:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-1CE text2 CODE >91:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-1D4 text2 CODE >92:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-1FC text2 CODE >91:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-214 text2 CODE >96:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+9A text4 CODE >50:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+9A text4 CODE >54:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+9E text4 CODE >55:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+A4 text4 CODE >56:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+CC text4 CODE >55:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+F8 text4 CODE >57:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+11E text4 CODE >58:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+120 text4 CODE >59:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+126 text4 CODE >60:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+14E text4 CODE >59:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+166 text4 CODE >64:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+168 text2 CODE >72:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+168 text2 CODE >76:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+16C text2 CODE >77:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+172 text2 CODE >78:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+19A text2 CODE >77:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+1C6 text2 CODE >79:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+1CC text2 CODE >80:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+1CE text2 CODE >81:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+1D4 text2 CODE >82:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+1FC text2 CODE >81:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+214 text2 CODE >86:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
 216 text0 CODE >7661:C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f13k22.h
 216 text0 CODE >66:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\main.c
 216 text0 CODE >67:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\main.c
@@ -100,54 +100,54 @@ F8 text4 CODE >67:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic
 25E text0 CODE >76:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\main.c
 26E text0 CODE >74:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\main.c
 270 text0 CODE >80:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\main.c
-274 text1 CODE >28:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-276 text1 CODE >30:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-278 text1 CODE >31:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-292 text1 CODE >32:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-296 text1 CODE >33:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-2B0 text1 CODE >35:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-2B4 text1 CODE >36:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-2B8 text1 CODE >37:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-2BA text9 CODE >39:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-2BC text9 CODE >41:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-2C2 text9 CODE >42:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-2C6 text9 CODE >43:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-2D2 text9 CODE >44:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-2D6 text9 CODE >45:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-2D8 text9 CODE >46:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-2DC text9 CODE >47:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-2DE text9 CODE >50:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-2E6 text9 CODE >51:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+274 text1 CODE >18:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+276 text1 CODE >20:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+278 text1 CODE >21:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+292 text1 CODE >22:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+296 text1 CODE >23:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+2B0 text1 CODE >25:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+2B4 text1 CODE >26:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+2B8 text1 CODE >27:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+2BA text9 CODE >29:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+2BC text9 CODE >31:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+2C2 text9 CODE >32:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+2C6 text9 CODE >33:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+2D2 text9 CODE >34:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+2D6 text9 CODE >35:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+2D8 text9 CODE >36:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+2DC text9 CODE >37:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+2DE text9 CODE >40:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+2E6 text9 CODE >41:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
 2E8 text6 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
 2E8 text6 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
 2F4 text6 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
 2FC text6 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
 304 text6 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
 30E text6 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
-310 cinit CODE >1126:C:\Users\Manuel\AppData\Local\Temp\s1oc.
-310 cinit CODE >1128:C:\Users\Manuel\AppData\Local\Temp\s1oc.
-310 cinit CODE >1131:C:\Users\Manuel\AppData\Local\Temp\s1oc.
-310 cinit CODE >1145:C:\Users\Manuel\AppData\Local\Temp\s1oc.
-314 cinit CODE >1146:C:\Users\Manuel\AppData\Local\Temp\s1oc.
-316 cinit CODE >1147:C:\Users\Manuel\AppData\Local\Temp\s1oc.
-316 cinit CODE >1148:C:\Users\Manuel\AppData\Local\Temp\s1oc.
-318 cinit CODE >1149:C:\Users\Manuel\AppData\Local\Temp\s1oc.
-31A cinit CODE >1150:C:\Users\Manuel\AppData\Local\Temp\s1oc.
-31C cinit CODE >1156:C:\Users\Manuel\AppData\Local\Temp\s1oc.
-31C cinit CODE >1157:C:\Users\Manuel\AppData\Local\Temp\s1oc.
-31E cinit CODE >1158:C:\Users\Manuel\AppData\Local\Temp\s1oc.
-322 text3 CODE >76:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-324 text3 CODE >78:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-32A text3 CODE >79:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-32E text3 CODE >80:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-330 text8 CODE >76:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-332 text8 CODE >78:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-338 text8 CODE >79:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-33C text8 CODE >80:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-33E text5 CODE >53:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-33E text5 CODE >55:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-344 text5 CODE >57:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-348 text5 CODE >58:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+310 cinit CODE >1417:C:\Users\Manuel\AppData\Local\Temp\s5ks.
+310 cinit CODE >1419:C:\Users\Manuel\AppData\Local\Temp\s5ks.
+310 cinit CODE >1422:C:\Users\Manuel\AppData\Local\Temp\s5ks.
+310 cinit CODE >1434:C:\Users\Manuel\AppData\Local\Temp\s5ks.
+314 cinit CODE >1435:C:\Users\Manuel\AppData\Local\Temp\s5ks.
+316 cinit CODE >1436:C:\Users\Manuel\AppData\Local\Temp\s5ks.
+316 cinit CODE >1437:C:\Users\Manuel\AppData\Local\Temp\s5ks.
+318 cinit CODE >1438:C:\Users\Manuel\AppData\Local\Temp\s5ks.
+31A cinit CODE >1439:C:\Users\Manuel\AppData\Local\Temp\s5ks.
+31C cinit CODE >1445:C:\Users\Manuel\AppData\Local\Temp\s5ks.
+31C cinit CODE >1446:C:\Users\Manuel\AppData\Local\Temp\s5ks.
+31E cinit CODE >1447:C:\Users\Manuel\AppData\Local\Temp\s5ks.
+322 text3 CODE >66:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+324 text3 CODE >68:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+32A text3 CODE >69:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+32E text3 CODE >70:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+330 text8 CODE >66:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+332 text8 CODE >68:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+338 text8 CODE >69:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+33C text8 CODE >70:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+33E text5 CODE >43:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+33E text5 CODE >45:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+344 text5 CODE >47:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+348 text5 CODE >48:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -162,22 +162,23 @@ F8 text4 CODE >67:C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic
 %SYMTAB
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\PICLibraries.X.production.obj
 __Hspace_0 30000E 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
-__Hspace_1 3A 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
+__Hspace_1 34 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 isr@byte 12 0 COMRAM 1 cstackCOMRAM dist/default/production\PICLibraries.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\PICLibraries.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\PICLibraries.X.production.obj
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\PICLibraries.X.production.obj
 _RCIE 7CED 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 _RCIF 7CF5 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
+_TMR3 FB2 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 _TXIE 7CEC 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 _TXIF 7CF4 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
+___sp 0 0 STACK 2 stack C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
 _main 216 0 CODE 0 text0 dist/default/production\PICLibraries.X.production.obj
-start 96 0 CODE 0 init C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
+start 96 0 CODE 0 init C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\PICLibraries.X.production.obj
@@ -185,11 +186,11 @@ __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\PICLibraries.X.producti
 i2serial_send_byte@byte 1 0 COMRAM 1 cstackCOMRAM dist/default/production\PICLibraries.X.production.obj
 __Hpowerup 96 0 CODE 0 powerup dist/default/production\PICLibraries.X.production.obj
 serial_send_data@i 1D 0 COMRAM 1 cstackCOMRAM dist/default/production\PICLibraries.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
-intlevel0 0 0 CODE 0 text C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
-intlevel1 0 0 CODE 0 text C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
-intlevel2 0 0 CODE 0 text C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
-intlevel3 0 0 CODE 0 text C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
+__accesstop 60 0 ABS 0 - C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
+intlevel0 0 0 CODE 0 text C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
+intlevel1 0 0 CODE 0 text C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
+intlevel2 0 0 CODE 0 text C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
+intlevel3 0 0 CODE 0 text C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\PICLibraries.X.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\PICLibraries.X.production.obj
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
@@ -198,15 +199,15 @@ __CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.ob
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\PICLibraries.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\PICLibraries.X.production.obj
 ___wmul@multiplicand 15 0 COMRAM 1 cstackCOMRAM dist/default/production\PICLibraries.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\PICLibraries.X.production.obj
 __end_of___wmul 310 0 CODE 0 text6 dist/default/production\PICLibraries.X.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\PICLibraries.X.production.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\PICLibraries.X.production.obj
 __Hintcodelo 96 0 CODE 0 intcodelo dist/default/production\PICLibraries.X.production.obj
-_setup_simple_serial$187 15 0 COMRAM 1 cstackCOMRAM dist/default/production\PICLibraries.X.production.obj
-_setup_simple_serial$188 17 0 COMRAM 1 cstackCOMRAM dist/default/production\PICLibraries.X.production.obj
+_setup_simple_serial$182 15 0 COMRAM 1 cstackCOMRAM dist/default/production\PICLibraries.X.production.obj
+_setup_simple_serial$183 17 0 COMRAM 1 cstackCOMRAM dist/default/production\PICLibraries.X.production.obj
 _INTCON FF2 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __end_of_serial_get_byte 34A 0 CODE 0 text5 dist/default/production\PICLibraries.X.production.obj
 __end_of_serial_get_data 168 0 CODE 0 text4 dist/default/production\PICLibraries.X.production.obj
@@ -246,7 +247,7 @@ __Htext9 0 0 ABS 0 text9 dist/default/production\PICLibraries.X.production.obj
 __CFG_BBSIZ$OFF 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\PICLibraries.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\PICLibraries.X.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\PICLibraries.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\PICLibraries.X.production.obj
 i2_serial_send_byte 330 0 CODE 0 text8 dist/default/production\PICLibraries.X.production.obj
@@ -293,7 +294,7 @@ serial_send_data@size 1B 0 COMRAM 1 cstackCOMRAM dist/default/production\PICLibr
 __Hintret 0 0 ABS 0 intret dist/default/production\PICLibraries.X.production.obj
 __Hirdata 0 0 CODE 0 irdata dist/default/production\PICLibraries.X.production.obj
 __S0 30000E 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
-__S1 3A 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
+__S1 34 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __S2 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 _isr 8 0 CODE 0 intcode dist/default/production\PICLibraries.X.production.obj
 __size_of_setup_simple_serial 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
@@ -310,6 +311,7 @@ __size_of___wmul 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.o
 __size_of_serial_get_byte 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __size_of_serial_get_data 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 _RCSTAbits FAB 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
+_PIE2bits FA0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __CFG_HFOFST$ON 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 _setup_simple_serial 274 0 CODE 0 text1 dist/default/production\PICLibraries.X.production.obj
 __CFG_PCLKEN$ON 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
@@ -322,14 +324,14 @@ __CFG_BORV$19 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __Lcomram 0 0 ABS 0 comram dist/default/production\PICLibraries.X.production.obj
 __Lconfig 300000 0 CONFIG 0 config dist/default/production\PICLibraries.X.production.obj
 ___wmul@multiplier 13 0 COMRAM 1 cstackCOMRAM dist/default/production\PICLibraries.X.production.obj
-main@F3920 29 0 COMRAM 1 bssCOMRAM dist/default/production\PICLibraries.X.production.obj
+main@F3928 29 0 COMRAM 1 bssCOMRAM dist/default/production\PICLibraries.X.production.obj
 main@data 1F 0 COMRAM 1 cstackCOMRAM dist/default/production\PICLibraries.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\PICLibraries.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\PICLibraries.X.production.obj
 _serial_send_byte 322 0 CODE 0 text3 dist/default/production\PICLibraries.X.production.obj
 _serial_send_data 168 0 CODE 0 text2 dist/default/production\PICLibraries.X.production.obj
-stackhi FF 0 ABS 0 - C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
-stacklo 60 0 ABS 0 - C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
+stackhi FF 0 ABS 0 - C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
+stacklo 60 0 ABS 0 - C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production\PICLibraries.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\PICLibraries.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\PICLibraries.X.production.obj
@@ -338,10 +340,11 @@ __Lspace_0 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __Lspace_1 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __Lspace_2 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __pbssCOMRAM 29 0 COMRAM 1 bssCOMRAM dist/default/production\PICLibraries.X.production.obj
+_PIR2bits FA1 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __Lend_init 96 0 CODE 0 end_init dist/default/production\PICLibraries.X.production.obj
 _serial_peek_receive 2BA 0 CODE 0 text9 dist/default/production\PICLibraries.X.production.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\PICLibraries.X.production.obj
-_dummy_byte 39 0 COMRAM 1 bssCOMRAM dist/default/production\PICLibraries.X.production.obj
+_dummy_byte 33 0 COMRAM 1 bssCOMRAM dist/default/production\PICLibraries.X.production.obj
 end_of_initialization 31C 0 CODE 0 cinit dist/default/production\PICLibraries.X.production.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\PICLibraries.X.production.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/production\PICLibraries.X.production.obj
@@ -362,11 +365,10 @@ __ptext6 2E8 0 CODE 0 text6 dist/default/production\PICLibraries.X.production.ob
 __ptext8 330 0 CODE 0 text8 dist/default/production\PICLibraries.X.production.obj
 __ptext9 2BA 0 CODE 0 text9 dist/default/production\PICLibraries.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\PICLibraries.X.production.obj
-__ramtop 100 0 RAM 0 ramtop C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
+__ramtop 100 0 RAM 0 ramtop C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
 __Lpowerup 96 0 CODE 0 powerup dist/default/production\PICLibraries.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\PICLibraries.X.production.obj
 __size_ofi2_serial_send_byte 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
-_interrupt_data 33 0 COMRAM 1 bssCOMRAM dist/default/production\PICLibraries.X.production.obj
 __end_of_setup_simple_serial 2BA 0 CODE 0 text1 dist/default/production\PICLibraries.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\PICLibraries.X.production.obj
 __CFG_FOSC$HS 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
@@ -400,6 +402,7 @@ _RCREG FAE 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 _RCSTA FAB 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 _SPBRG FAF 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 _SSPIF 7CF3 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
+_T3CON FB1 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 _TXREG FAD 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 _TXSTA FAC 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
 __CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\PICLibraries.X.production.obj
@@ -449,7 +452,7 @@ __Hintcode 96 0 CODE 0 intcode dist/default/production\PICLibraries.X.production
 # All other numeric quantities are in decimal.
 %SEGMENTS
 idloc 0 200000 200000 8 1
-cstackCOMRAM 1 1 1 39 1
+cstackCOMRAM 1 1 1 33 1
 reset_vec 0 0 0 4 1
 intcode 0 8 8 342 1
 config 0 300000 300000 E 1

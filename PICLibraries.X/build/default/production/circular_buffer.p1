@@ -1,6 +1,6 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "10 circular_buffer.h
-[s S1 `uc 1 `uc 1 `uc -> 64 `i ]
+[s S1 `uc 1 `uc 1 `uc -> 32 `i ]
 [n S1 circular_buffer position count data ]
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
@@ -34,7 +34,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;circular_buffer.h: 10: struct circular_buffer {
 [; ;circular_buffer.h: 11: uint8_t position;
 [; ;circular_buffer.h: 12: uint8_t count;
-[; ;circular_buffer.h: 13: uint8_t data[0x40];
+[; ;circular_buffer.h: 13: uint8_t data[0x20];
 [; ;circular_buffer.h: 14: };
 [; ;circular_buffer.h: 21: int16_t buffer_pop(struct circular_buffer *buffer);
 [; ;circular_buffer.h: 27: bool buffer_push(struct circular_buffer *buffer, uint8_t byte);
@@ -72,9 +72,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _buffer `*CS1 ~T0 @X0 1 r1 ]
 "10
 [f ]
-[; ;circular_buffer.c: 11: return 0x40 - buffer->count;
+[; ;circular_buffer.c: 11: return 0x20 - buffer->count;
 "11
-[e ) -> - -> 64 `i -> . *U _buffer 1 `i `uc ]
+[e ) -> - -> 32 `i -> . *U _buffer 1 `i `uc ]
 [e $UE 3  ]
 [; ;circular_buffer.c: 12: }
 "12
@@ -110,9 +110,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _buffer `*CS1 ~T0 @X0 1 r1 ]
 "20
 [f ]
-[; ;circular_buffer.c: 21: return (buffer->count == 0x40) ? 1 : 0;
+[; ;circular_buffer.c: 21: return (buffer->count == 0x20) ? 1 : 0;
 "21
-[e ) -> ? == -> . *U _buffer 1 `i -> 64 `i : -> 1 `i -> 0 `i `uc ]
+[e ) -> ? == -> . *U _buffer 1 `i -> 32 `i : -> 1 `i -> 0 `i `uc ]
 [e $UE 5  ]
 [; ;circular_buffer.c: 22: }
 "22
@@ -130,9 +130,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _byte `uc ~T0 @X0 1 r2 ]
 "25
 [f ]
-[; ;circular_buffer.c: 26: if (buffer->count == 0x40) {
+[; ;circular_buffer.c: 26: if (buffer->count == 0x20) {
 "26
-[e $ ! == -> . *U _buffer 1 `i -> 64 `i 7  ]
+[e $ ! == -> . *U _buffer 1 `i -> 32 `i 7  ]
 {
 [; ;circular_buffer.c: 27: return 0;
 "27
@@ -147,9 +147,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "29
 [v _current_position `uc ~T0 @X0 1 a ]
 [; ;circular_buffer.c: 29: uint8_t current_position = (buffer->position + buffer->count)
-[; ;circular_buffer.c: 30: & (0x40 - 1);
+[; ;circular_buffer.c: 30: & (0x20 - 1);
 "30
-[e = _current_position -> & + -> . *U _buffer 0 `i -> . *U _buffer 1 `i - -> 64 `i -> 1 `i `uc ]
+[e = _current_position -> & + -> . *U _buffer 0 `i -> . *U _buffer 1 `i - -> 32 `i -> 1 `i `uc ]
 [; ;circular_buffer.c: 31: buffer->data[current_position] = byte;
 "31
 [e = *U + &U . *U _buffer 2 * -> _current_position `ux -> -> # *U &U . *U _buffer 2 `ui `ux _byte ]
@@ -195,9 +195,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;circular_buffer.c: 41: }
 [; ;circular_buffer.c: 43: int16_t byte = (buffer->data[buffer->position]) & 0xFF;
 [e = _byte & -> *U + &U . *U _buffer 2 * -> . *U _buffer 0 `ux -> -> # *U &U . *U _buffer 2 `ui `ux `i -> 255 `i ]
-[; ;circular_buffer.c: 44: buffer->position = (buffer->position + 1) & (0x40 - 1);
+[; ;circular_buffer.c: 44: buffer->position = (buffer->position + 1) & (0x20 - 1);
 "44
-[e = . *U _buffer 0 -> & + -> . *U _buffer 0 `i -> 1 `i - -> 64 `i -> 1 `i `uc ]
+[e = . *U _buffer 0 -> & + -> . *U _buffer 0 `i -> 1 `i - -> 32 `i -> 1 `i `uc ]
 [; ;circular_buffer.c: 45: buffer->count--;
 "45
 [e -- . *U _buffer 1 -> -> 1 `i `uc ]

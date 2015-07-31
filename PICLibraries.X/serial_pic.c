@@ -91,7 +91,7 @@ void serial_interrupts(uint8_t interrupts,
     if (interrupts & (RX_INTERRUPT | TX_INTERRUPT)) {
         INTCON |= 0xC0;
         RCIE = (interrupts & RX_INTERRUPT) ? 1 : 0;
-        interrupt_data.tx_int_enable = (interrupts & TX_INTERRUPT) ? true : false;
+        interrupt_data->tx_int_enable = (interrupts & TX_INTERRUPT) ? true : false;
     }
 }
 
@@ -105,16 +105,16 @@ void serial_disable_interrupts(uint8_t interrupts, bool all_interrupts,
         RCIE = 0;
     
     if (interrupts & TX_INTERRUPT)
-        interrupt_data.tx_int_enable = false;
+        interrupt_data->tx_int_enable = false;
 }
 
 void serial_load_buffer(uint8_t *buffer, int8_t size, 
                         struct interrupt_serial volatile *interrupt_data)
 {
-    if (interrupt_data.tx_int_enable) {
-        interrupt_data.data = buffer;
-        interrupt_data.length = size;
-        interrupt_data.position = 0;
+    if (interrupt_data->tx_int_enable) {
+        interrupt_data->data = buffer;
+        interrupt_data->length = size;
+        interrupt_data->position = 0;
         
         TXIE  = 1;
     }
@@ -123,21 +123,21 @@ void serial_load_buffer(uint8_t *buffer, int8_t size,
 int8_t serial_send_buffer(struct interrupt_serial volatile *interrupt_data)
 {   
     if (TXIF && TXIE) {
-        if (interrupt_data.length < 0) {
-            if (interrupt_data.data[interrupt_data.position] != 0) {
-                serial_send_byte(interrupt_data.data[interrupt_data.position]);
-                interrupt_data.position++;
+        if (interrupt_data->length < 0) {
+            if (interrupt_data->data[interrupt_data->position] != 0) {
+                serial_send_byte(interrupt_data->data[interrupt_data->position]);
+                interrupt_data->position++;
             } else {
                 TXIE  = 0;
             }
-        } else if (interrupt_data.position < interrupt_data.length) {
-            serial_send_byte(interrupt_data.data[interrupt_data.position]);
-            interrupt_data.position++;
-            if (interrupt_data.position == interrupt_data.length)
+        } else if (interrupt_data->position < interrupt_data->length) {
+            serial_send_byte(interrupt_data->data[interrupt_data->position]);
+            interrupt_data->position++;
+            if (interrupt_data->position == interrupt_data->length)
                 TXIE  = 0;
         }
         
-        return interrupt_data.position;
+        return interrupt_data->position;
     } else {
         return -1;
     }

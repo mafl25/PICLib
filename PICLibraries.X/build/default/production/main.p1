@@ -4,15 +4,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 "161 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18.h
 [v __delay `JF3845 ~T0 @X0 0 e ]
 [p i __delay ]
-"101 serial_pic.h
+"109 serial_pic.h
 [v _setup_simple_serial `(v ~T0 @X0 0 ef2`uc`ui ]
-"129
+"137
 [v _serial_send_byte `(v ~T0 @X0 0 ef1`uc ]
-"123
+"131
 [v _serial_get_data `(c ~T0 @X0 0 ef2`*uc`c ]
-"136
+"144
 [v _serial_send_data `(c ~T0 @X0 0 ef2`*uc`c ]
-"109
+"117
 [v _serial_peek_receive `(uc ~T0 @X0 0 ef2`uc`*uc ]
 "9 main.c
 [p x FOSC=HS ]
@@ -3624,19 +3624,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;serial_pic.h: 92: void setup_serial(uint8_t register_1, uint8_t register_2, uint8_t register_3,
-[; ;serial_pic.h: 93: uint16_t baudrate_value);
-[; ;serial_pic.h: 101: void setup_simple_serial(uint8_t baudrate_bits, uint16_t baudrate_value);
-[; ;serial_pic.h: 109: bool serial_peek_receive(bool get_byte, uint8_t *byte);
-[; ;serial_pic.h: 115: uint8_t serial_get_byte(void);
-[; ;serial_pic.h: 123: int8_t serial_get_data(uint8_t *data, int8_t size);
-[; ;serial_pic.h: 129: void serial_send_byte(uint8_t byte);
-[; ;serial_pic.h: 136: int8_t serial_send_data(uint8_t *data, int8_t size);
-[; ;serial_pic.h: 144: void serial_interrupts(uint8_t interrupts);
-[; ;serial_pic.h: 153: void serial_disable_interrupts(uint8_t interrupts, bool all_interrupts);
-[; ;serial_pic.h: 161: void serial_load_buffer(uint8_t *buffer, int8_t size);
-[; ;serial_pic.h: 168: int8_t serial_send_buffer(void);
-[; ;serial_pic.h: 177: uint8_t serial_receive_error(bool clear);
+[; ;serial_pic.h: 87: struct interrupt_serial
+[; ;serial_pic.h: 88: {
+[; ;serial_pic.h: 89: bool tx_int_enable;
+[; ;serial_pic.h: 90: uint8_t *data;
+[; ;serial_pic.h: 91: int8_t length;
+[; ;serial_pic.h: 92: int8_t position;
+[; ;serial_pic.h: 93: };
+[; ;serial_pic.h: 100: void setup_serial(uint8_t register_1, uint8_t register_2, uint8_t register_3,
+[; ;serial_pic.h: 101: uint16_t baudrate_value);
+[; ;serial_pic.h: 109: void setup_simple_serial(uint8_t baudrate_bits, uint16_t baudrate_value);
+[; ;serial_pic.h: 117: bool serial_peek_receive(bool get_byte, uint8_t *byte);
+[; ;serial_pic.h: 123: uint8_t serial_get_byte(void);
+[; ;serial_pic.h: 131: int8_t serial_get_data(uint8_t *data, int8_t size);
+[; ;serial_pic.h: 137: void serial_send_byte(uint8_t byte);
+[; ;serial_pic.h: 144: int8_t serial_send_data(uint8_t *data, int8_t size);
+[; ;serial_pic.h: 152: void serial_interrupts(uint8_t interrupts,
+[; ;serial_pic.h: 153: struct interrupt_serial volatile *interrupt_data);
+[; ;serial_pic.h: 162: void serial_disable_interrupts(uint8_t interrupts, bool all_interrupts,
+[; ;serial_pic.h: 163: struct interrupt_serial volatile *interrupt_data);
+[; ;serial_pic.h: 171: void serial_load_buffer(uint8_t *buffer, int8_t size,
+[; ;serial_pic.h: 172: struct interrupt_serial volatile *interrupt_data);
+[; ;serial_pic.h: 179: int8_t serial_send_buffer(struct interrupt_serial volatile *interrupt_data);
+[; ;serial_pic.h: 188: uint8_t serial_receive_error(bool clear);
 [; ;main.c: 64: void interrupt handler(void);
 "66 main.c
 [v _main `(i ~T0 @X0 1 ef ]
@@ -3650,21 +3660,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 68: setup_simple_serial(0x08 | 0x04, 0x81);
 "68
 [e ( _setup_simple_serial (2 , -> | -> 8 `i -> 4 `i `uc -> -> 129 `i `ui ]
-[v F3920 `uc ~T0 @X0 -> 10 `i s ]
-[i F3920
+[v F3928 `uc ~T0 @X0 -> 10 `i s ]
+[i F3928
 :U ..
 ..
 ]
 "69
 [v _data `uc ~T0 @X0 -> 10 `i a ]
 [; ;main.c: 69: uint8_t data[10] = {};
-[e = _data F3920 ]
+[e = _data F3928 ]
 [; ;main.c: 72: serial_send_byte(0xAA);
 "72
 [e ( _serial_send_byte (1 -> -> 170 `i `uc ]
 [; ;main.c: 74: while (1) {
 "74
-[e :U 375 ]
+[e :U 376 ]
 {
 [; ;main.c: 75: serial_get_data(data, 10);
 "75
@@ -3674,22 +3684,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _serial_send_data (2 , &U _data -> -> 10 `i `c ]
 "77
 }
-[e :U 374 ]
+[e :U 375 ]
 "74
-[e $U 375  ]
-[e :U 376 ]
+[e $U 376  ]
+[e :U 377 ]
 [; ;main.c: 77: }
 [; ;main.c: 79: return (0);
 "79
 [e ) -> 0 `i ]
-[e $UE 373  ]
+[e $UE 374  ]
 [; ;main.c: 80: }
 "80
-[e :UE 373 ]
+[e :UE 374 ]
 }
-[v F3923 `(v ~T0 @X0 1 tf ]
+[v F3931 `(v ~T0 @X0 1 tf ]
 "82
-[v _isr `IF3923 ~T0 @X0 1 e ]
+[v _isr `IF3931 ~T0 @X0 1 e ]
 "83
 {
 [; ;main.c: 82: void interrupt isr(void)
@@ -3701,12 +3711,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 84: uint8_t byte;
 [; ;main.c: 85: if (serial_peek_receive(1, &byte))
 "85
-[e $ ! != -> ( _serial_peek_receive (2 , -> -> 1 `i `uc &U _byte `i -> -> -> 0 `i `uc `i 378  ]
+[e $ ! != -> ( _serial_peek_receive (2 , -> -> 1 `i `uc &U _byte `i -> -> -> 0 `i `uc `i 379  ]
 [; ;main.c: 86: serial_send_byte(byte);
 "86
 [e ( _serial_send_byte (1 _byte ]
-[e :U 378 ]
+[e :U 379 ]
 [; ;main.c: 87: }
 "87
-[e :UE 377 ]
+[e :UE 378 ]
 }

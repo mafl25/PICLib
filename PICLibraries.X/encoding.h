@@ -11,20 +11,11 @@
 #define	ENCODING_H
 
 
-/* P_START_MASK is used when a packet of 15 or less byte is going to be sent.*
- * LP_START_MASK_1 and LP_START_MASK_2 are used if a packet of up to 255 bytes
- * is going to be sent.
+/*
  * DATA_MASK is the mask that will be used when encoding data.
- * END_BYTE indicates the end of a packet.
- * DUMMY_BYTE is used when filler bytes are needed.
- * ERROR_MASK is used when an error code needs to be sent.*/
-#define P_START_MASK        0xA0
-#define LP_START_MASK_1     0xB0
-#define LP_START_MASK_2     0xC0
-#define DATA_MASK           0xD0
-#define END_BYTE            0xE0
-#define DUMMY_BYTE          0xF0
-#define ERROR_MASK          0x80  // TODO: Make error codes.
+ */
+
+#define DATA_MASK           0xA0
 
 /* 
  * The function "encode_data" takes a byte (variable "data") and encodes it. 

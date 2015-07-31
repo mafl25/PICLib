@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.34\dat\en_msgs.txt -cs \
   -h+dist/default/production\PICLibraries.X.production.sym \
   --cmf=dist/default/production\PICLibraries.X.production.cmf -z -Q18F13K22 \
-  -oC:\Users\Manuel\AppData\Local\Temp\s1oc.6 \
+  -oC:\Users\Manuel\AppData\Local\Temp\s5ks.6 \
   -Mdist/default/production/PICLibraries.X.production.map -E1 -ver=XC8 \
   -ASTACK=060h-0ffh -pstack=STACK -ACODE=00h-01FFFh -ACONST=00h-01FFFh \
   -ASMALLCONST=0100h-01FFhx31 -AMEDIUMCONST=0100h-01FFFh -ACOMRAM=01h-05Fh \
@@ -20,7 +20,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Manuel\AppData\Local\Temp\s1oc.obj \
+  C:\Users\Manuel\AppData\Local\Temp\s5ks.obj \
   dist/default/production\PICLibraries.X.production.obj 
 
 Object code version is 3.11
@@ -33,7 +33,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Manuel\AppData\Local\Temp\s1oc.obj
+C:\Users\Manuel\AppData\Local\Temp\s5ks.obj
                 end_init                             96       96        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -49,7 +49,7 @@ dist/default/production\PICLibraries.X.production.obj
                 text2                               168      168       AE        4       0
                 text1                               274      274       46        4       0
                 cstackCOMRAM                          1        1       28        1       1
-                bssCOMRAM                            29       29       11        1       1
+                bssCOMRAM                            29       29        B        1       1
                 cinit                               310      310       12        4       0
                 text0                               216      216       5E        4       0
 
@@ -79,7 +79,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 
         CLASS   COMRAM         
                 cstackCOMRAM                          1        1       28         1
-                bssCOMRAM                            29       29       11         1
+                bssCOMRAM                            29       29        B         1
 
         CLASS   ABS1           
 
@@ -106,7 +106,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  000039  00003A         1       1  COMRAM  
+                cstackCOMRAM                   000001  000033  000034         1       1  COMRAM  
                 intcode                        000008  000342  00034A         4       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
@@ -116,10 +116,10 @@ UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
         BANK0            000060-0000FF               A0
-        BIGRAM           00003A-0000FF               C6
+        BIGRAM           000034-0000FF               CC
         CODE             000004-000007                4
                          00034A-001FFF             1CB6
-        COMRAM           00003A-00005F               26
+        COMRAM           000034-00005F               2C
         CONST            000004-000007                4
                          00034A-001FFF             1CB6
         EEDATA           F00000-F000FF              100
@@ -135,6 +135,8 @@ UNUSED ADDRESS RANGES
 _ANSELHbits                        (abs)        000F7F
 _BAUDCON                           (abs)        000FB8
 _INTCON                            (abs)        000FF2
+_PIE2bits                          (abs)        000FA0
+_PIR2bits                          (abs)        000FA1
 _RCIE                              (abs)        007CED
 _RCIF                              (abs)        007CF5
 _RCREG                             (abs)        000FAE
@@ -148,6 +150,8 @@ _SSPCON1bits                       (abs)        000FC6
 _SSPIF                             (abs)        007CF3
 _SSPSTAT                           (abs)        000FC7
 _SSPSTATbits                       (abs)        000FC7
+_T3CON                             (abs)        000FB1
+_TMR3                              (abs)        000FB2
 _TRISBbits                         (abs)        000F93
 _TRISCbits                         (abs)        000F94
 _TXIE                              (abs)        007CEC
@@ -229,7 +233,7 @@ __Hrparam                          rparam       000000
 __Hsfr                             sfr          000000
 __Hsmallconst                      smallconst   000000
 __Hspace_0                         (abs)        30000E
-__Hspace_1                         (abs)        00003A
+__Hspace_1                         (abs)        000034
 __Hspace_2                         (abs)        000000
 __Hstack                           stack        000000
 __Hstruct                          struct       000000
@@ -307,7 +311,7 @@ __Ltext6                           text6        000000
 __Ltext8                           text8        000000
 __Ltext9                           text9        000000
 __S0                               (abs)        30000E
-__S1                               (abs)        00003A
+__S1                               (abs)        000034
 __S2                               (abs)        000000
 ___inthi_sp                        stack        000000
 ___intlo_sp                        stack        000000
@@ -358,8 +362,7 @@ __size_of_serial_send_data         (abs)        000000
 __size_of_setup_simple_serial      (abs)        000000
 __size_ofi2_serial_send_byte       (abs)        000000
 __smallconst                       smallconst   000000
-_dummy_byte                        bssCOMRAM    000039
-_interrupt_data                    bssCOMRAM    000033
+_dummy_byte                        bssCOMRAM    000033
 _isr                               intcode      000008
 _main                              text0        000216
 _serial_get_byte                   text5        00033E
@@ -368,8 +371,8 @@ _serial_peek_receive               text9        0002BA
 _serial_send_byte                  text3        000322
 _serial_send_data                  text2        000168
 _setup_simple_serial               text1        000274
-_setup_simple_serial$187           cstackCOMRAM 000015
-_setup_simple_serial$188           cstackCOMRAM 000017
+_setup_simple_serial$182           cstackCOMRAM 000015
+_setup_simple_serial$183           cstackCOMRAM 000017
 end_of_initialization              cinit        00031C
 i2_serial_send_byte                text8        000330
 i2serial_send_byte@byte            cstackCOMRAM 000001
@@ -378,7 +381,7 @@ intlevel1                          text         000000
 intlevel2                          text         000000
 intlevel3                          text         000000
 isr@byte                           cstackCOMRAM 000012
-main@F3920                         bssCOMRAM    000029
+main@F3928                         bssCOMRAM    000029
 main@data                          cstackCOMRAM 00001F
 serial_get_data@data               cstackCOMRAM 000019
 serial_get_data@i                  cstackCOMRAM 00001D
@@ -433,7 +436,7 @@ Total ram usage:       11 bytes
 
  *************** function _setup_simple_serial *****************
  Defined at:
-		line 28 in file "serial_pic.c"
+		line 18 in file "serial_pic.c"
  Parameters:    Size  Location     Type
   baudrate_bit    1    wreg     unsigned char 
   baudrate_val    2   18[COMRAM] unsigned int 
@@ -464,7 +467,7 @@ Total ram usage:        7 bytes
 
  *************** function _serial_send_data *****************
  Defined at:
-		line 82 in file "serial_pic.c"
+		line 72 in file "serial_pic.c"
  Parameters:    Size  Location     Type
   data            2   24[COMRAM] PTR unsigned char 
 		 -> main@data(10), 
@@ -497,7 +500,7 @@ Total ram usage:        5 bytes
 
  *************** function _serial_send_byte *****************
  Defined at:
-		line 76 in file "serial_pic.c"
+		line 66 in file "serial_pic.c"
  Parameters:    Size  Location     Type
   byte            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -529,7 +532,7 @@ Total ram usage:        1 bytes
 
  *************** function _serial_get_data *****************
  Defined at:
-		line 60 in file "serial_pic.c"
+		line 50 in file "serial_pic.c"
  Parameters:    Size  Location     Type
   data            2   24[COMRAM] PTR unsigned char 
 		 -> main@data(10), 
@@ -562,7 +565,7 @@ Total ram usage:        5 bytes
 
  *************** function _serial_get_byte *****************
  Defined at:
-		line 53 in file "serial_pic.c"
+		line 43 in file "serial_pic.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -659,7 +662,7 @@ Total ram usage:       15 bytes
 
  *************** function i2_serial_send_byte *****************
  Defined at:
-		line 76 in file "serial_pic.c"
+		line 66 in file "serial_pic.c"
  Parameters:    Size  Location     Type
   byte            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -688,7 +691,7 @@ Total ram usage:        1 bytes
 
  *************** function _serial_peek_receive *****************
  Defined at:
-		line 39 in file "serial_pic.c"
+		line 29 in file "serial_pic.c"
  Parameters:    Size  Location     Type
   get_byte        1    wreg     unsigned char 
   byte            2    0[COMRAM] PTR unsigned char 

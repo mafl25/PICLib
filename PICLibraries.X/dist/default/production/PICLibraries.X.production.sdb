@@ -31,54 +31,54 @@
 [v _main main `(i  1 e 2 0 ]
 "82
 [v _isr isr `II(v  1 e 0 0 ]
-"28 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+"18 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
 [v _setup_simple_serial setup_simple_serial `(v  1 e 0 0 ]
-"39
+"29
 [v _serial_peek_receive serial_peek_receive `(uc  1 e 1 0 ]
-"53
+"43
 [v _serial_get_byte serial_get_byte `(uc  1 e 1 0 ]
-"60
+"50
 [v _serial_get_data serial_get_data `(c  1 e 1 0 ]
-"76
+"66
 [v _serial_send_byte serial_send_byte `(v  1 e 0 0 ]
 [v i2_serial_send_byte serial_send_byte `(v  1 e 0 0 ]
-"82
+"72
 [v _serial_send_data serial_send_data `(c  1 e 1 0 ]
 "30 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\spi_pic.c
 [v _spi_send_get_byte spi_send_get_byte `(uc  1 e 1 0 ]
 "106
 [v _spi_slave_get_byte spi_slave_get_byte `(uc  1 e 1 0 ]
-[s S75 . 1 `uc 1 ANSELH 1 0 :4:0 
+[s S70 . 1 `uc 1 ANSELH 1 0 :4:0 
 ]
 "896 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f13k22.h
-[s S77 . 1 `uc 1 ANS8 1 0 :1:0 
+[s S72 . 1 `uc 1 ANS8 1 0 :1:0 
 `uc 1 ANS9 1 0 :1:1 
 `uc 1 ANS10 1 0 :1:2 
 `uc 1 ANS11 1 0 :1:3 
 ]
-[s S82 . 1 `uc 1 ANSEL8 1 0 :1:0 
+[s S77 . 1 `uc 1 ANSEL8 1 0 :1:0 
 `uc 1 ANSEL9 1 0 :1:1 
 `uc 1 ANSEL10 1 0 :1:2 
 `uc 1 ANSEL11 1 0 :1:3 
 ]
-[u S87 . 1 `S75 1 . 1 0 `S77 1 . 1 0 `S82 1 . 1 0 ]
-[v _ANSELHbits ANSELHbits `VES87  1 e 1 @3967 ]
-[s S292 . 1 `uc 1 . 1 0 :4:0 
+[u S82 . 1 `S70 1 . 1 0 `S72 1 . 1 0 `S77 1 . 1 0 ]
+[v _ANSELHbits ANSELHbits `VES82  1 e 1 @3967 ]
+[s S308 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TRISB4 1 0 :1:4 
 `uc 1 TRISB5 1 0 :1:5 
 `uc 1 TRISB6 1 0 :1:6 
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "2147
-[s S298 . 1 `uc 1 . 1 0 :4:0 
+[s S314 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 RB4 1 0 :1:4 
 `uc 1 RB5 1 0 :1:5 
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-[u S304 . 1 `S292 1 . 1 0 `S298 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES304  1 e 1 @3987 ]
-[s S224 . 1 `uc 1 TRISC0 1 0 :1:0 
+[u S320 . 1 `S308 1 . 1 0 `S314 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES320  1 e 1 @3987 ]
+[s S240 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -88,7 +88,7 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "2282
-[s S233 . 1 `uc 1 RC0 1 0 :1:0 
+[s S249 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -97,8 +97,38 @@
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S242 . 1 `S224 1 . 1 0 `S233 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES242  1 e 1 @3988 ]
+[u S258 . 1 `S240 1 . 1 0 `S249 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES258  1 e 1 @3988 ]
+[s S627 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 TMR3IE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BCLIE 1 0 :1:3 
+`uc 1 EEIE 1 0 :1:4 
+`uc 1 C2IE 1 0 :1:5 
+`uc 1 C1IE 1 0 :1:6 
+`uc 1 OSCFIE 1 0 :1:7 
+]
+"2780
+[s S636 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 CMIE 1 0 :1:6 
+]
+[u S639 . 1 `S627 1 . 1 0 `S636 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES639  1 e 1 @4000 ]
+[s S597 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 TMR3IF 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BCLIF 1 0 :1:3 
+`uc 1 EEIF 1 0 :1:4 
+`uc 1 C2IF 1 0 :1:5 
+`uc 1 C1IF 1 0 :1:6 
+`uc 1 OSCFIF 1 0 :1:7 
+]
+"2840
+[s S606 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 CMIF 1 0 :1:6 
+]
+[u S609 . 1 `S597 1 . 1 0 `S606 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES609  1 e 1 @4001 ]
 "3077
 [v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
 [s S116 . 1 `uc 1 RX9D 1 0 :1:0 
@@ -137,34 +167,38 @@
 [v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
 "3616
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @4016 ]
+"3622
+[v _T3CON T3CON `VEuc  1 e 1 @4017 ]
+"3730
+[v _TMR3 TMR3 `VEus  1 e 2 @4018 ]
 "3898
 [v _BAUDCON BAUDCON `VEuc  1 e 1 @4024 ]
 "4841
 [v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
-[s S266 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S282 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "4861
-[s S272 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S288 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S277 . 1 `S266 1 . 1 0 `S272 1 . 1 0 ]
-[v _SSPCON1bits SSPCON1bits `VES277  1 e 1 @4038 ]
+[u S293 . 1 `S282 1 . 1 0 `S288 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES293  1 e 1 @4038 ]
 "4910
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
-[s S320 . 1 `uc 1 . 1 0 :2:0 
+[s S336 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_NOT_W 1 0 :1:2 
 ]
 "4997
-[s S323 . 1 `uc 1 . 1 0 :5:0 
+[s S339 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 D_NOT_A 1 0 :1:5 
 ]
-[s S326 . 1 `uc 1 BF 1 0 :1:0 
+[s S342 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -173,57 +207,57 @@
 `uc 1 CKE 1 0 :1:6 
 `uc 1 SMP 1 0 :1:7 
 ]
-[s S335 . 1 `uc 1 . 1 0 :2:0 
+[s S351 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S340 . 1 `uc 1 . 1 0 :2:0 
+[s S356 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 A 1 0 :1:5 
 ]
-[s S345 . 1 `uc 1 . 1 0 :2:0 
+[s S361 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S350 . 1 `uc 1 . 1 0 :2:0 
+[s S366 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S355 . 1 `uc 1 . 1 0 :2:0 
+[s S371 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_WRITE 1 0 :1:2 
 ]
-[s S358 . 1 `uc 1 . 1 0 :5:0 
+[s S374 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_ADDRESS 1 0 :1:5 
 ]
-[s S361 . 1 `uc 1 . 1 0 :2:0 
+[s S377 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S366 . 1 `uc 1 . 1 0 :5:0 
+[s S382 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 DA 1 0 :1:5 
 ]
-[s S369 . 1 `uc 1 . 1 0 :2:0 
+[s S385 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 ]
-[s S372 . 1 `uc 1 . 1 0 :3:0 
+[s S388 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 START 1 0 :1:3 
 ]
-[s S375 . 1 `uc 1 . 1 0 :4:0 
+[s S391 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 STOP 1 0 :1:4 
 ]
-[s S378 . 1 `uc 1 . 1 0 :2:0 
+[s S394 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_W 1 0 :1:2 
 ]
-[s S381 . 1 `uc 1 . 1 0 :5:0 
+[s S397 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_A 1 0 :1:5 
 ]
-[u S384 . 1 `S320 1 . 1 0 `S323 1 . 1 0 `S326 1 . 1 0 `S335 1 . 1 0 `S340 1 . 1 0 `S345 1 . 1 0 `S350 1 . 1 0 `S355 1 . 1 0 `S358 1 . 1 0 `S361 1 . 1 0 `S366 1 . 1 0 `S369 1 . 1 0 `S372 1 . 1 0 `S375 1 . 1 0 `S378 1 . 1 0 `S381 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES384  1 e 1 @4039 ]
+[u S400 . 1 `S336 1 . 1 0 `S339 1 . 1 0 `S342 1 . 1 0 `S351 1 . 1 0 `S356 1 . 1 0 `S361 1 . 1 0 `S366 1 . 1 0 `S371 1 . 1 0 `S374 1 . 1 0 `S377 1 . 1 0 `S382 1 . 1 0 `S385 1 . 1 0 `S388 1 . 1 0 `S391 1 . 1 0 `S394 1 . 1 0 `S397 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES400  1 e 1 @4039 ]
 "5147
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
 "6242
@@ -238,9 +272,6 @@
 [v _TXIE TXIE `VEb  1 e 0 @31980 ]
 "7661
 [v _TXIF TXIF `VEb  1 e 0 @31988 ]
-[s S70 interrupt_serial 6 `uc 1 tx_int_enable 1 0 `*.2uc 1 data 3 1 `c 1 length 1 4 `c 1 position 1 5 ]
-"11 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
-[v _interrupt_data interrupt_data `S70  1 s 6 interrupt_data ]
 "9 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\spi_pic.c
 [v _dummy_byte dummy_byte `uc  1 s 1 dummy_byte ]
 "66 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\main.c
@@ -249,51 +280,51 @@
 "69
 [v main@data data `[10]uc  1 a 10 30 ]
 "68
-[v main@F3920 F3920 `[10]uc  1 s 10 F3920 ]
+[v main@F3928 F3928 `[10]uc  1 s 10 F3928 ]
 "80
 } 0
-"28 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+"18 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
 [v _setup_simple_serial setup_simple_serial `(v  1 e 0 0 ]
 {
 [v setup_simple_serial@baudrate_bits baudrate_bits `uc  1 a 1 wreg ]
 [v setup_simple_serial@baudrate_bits baudrate_bits `uc  1 a 1 wreg ]
 [v setup_simple_serial@baudrate_value baudrate_value `ui  1 p 2 18 ]
-"30
+"20
 [v setup_simple_serial@baudrate_bits baudrate_bits `uc  1 a 1 24 ]
-"37
+"27
 } 0
-"82
+"72
 [v _serial_send_data serial_send_data `(c  1 e 1 0 ]
 {
-"84
+"74
 [v serial_send_data@i i `c  1 a 1 28 ]
-"82
+"72
 [v serial_send_data@data data `*.39uc  1 p 2 24 ]
 [v serial_send_data@size size `c  1 p 1 26 ]
-"96
+"86
 } 0
-"76
+"66
 [v _serial_send_byte serial_send_byte `(v  1 e 0 0 ]
 {
 [v serial_send_byte@byte byte `uc  1 a 1 wreg ]
 [v serial_send_byte@byte byte `uc  1 a 1 wreg ]
 [v serial_send_byte@byte byte `uc  1 a 1 18 ]
-"80
+"70
 } 0
-"60
+"50
 [v _serial_get_data serial_get_data `(c  1 e 1 0 ]
 {
-"62
+"52
 [v serial_get_data@i i `c  1 a 1 28 ]
-"60
+"50
 [v serial_get_data@data data `*.39uc  1 p 2 24 ]
 [v serial_get_data@size size `c  1 p 1 26 ]
-"74
+"64
 } 0
-"53
+"43
 [v _serial_get_byte serial_get_byte `(uc  1 e 1 0 ]
 {
-"58
+"48
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -312,21 +343,21 @@
 [v isr@byte byte `uc  1 a 1 17 ]
 "87
 } 0
-"76 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
+"66 C:\Users\Manuel\Documents\PICLibrary\PICLibraries.X\serial_pic.c
 [v i2_serial_send_byte serial_send_byte `(v  1 e 0 0 ]
 {
 [v i2serial_send_byte@byte byte `uc  1 a 1 wreg ]
 [v i2serial_send_byte@byte byte `uc  1 a 1 wreg ]
 [v i2serial_send_byte@byte byte `uc  1 a 1 0 ]
-"80
+"70
 } 0
-"39
+"29
 [v _serial_peek_receive serial_peek_receive `(uc  1 e 1 0 ]
 {
 [v serial_peek_receive@get_byte get_byte `uc  1 a 1 wreg ]
 [v serial_peek_receive@get_byte get_byte `uc  1 a 1 wreg ]
 [v serial_peek_receive@byte byte `*.39uc  1 p 2 0 ]
-"41
+"31
 [v serial_peek_receive@get_byte get_byte `uc  1 a 1 2 ]
-"51
+"41
 } 0

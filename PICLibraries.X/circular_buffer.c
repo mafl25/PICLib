@@ -23,15 +23,15 @@ bool buffer_full(const struct circular_buffer *buffer)
 
 bool buffer_push(struct circular_buffer *buffer, uint8_t byte)
 {
+	if (buffer->count == BUFFER_SIZE)
+        return false;
+	
     uint8_t current_position = (buffer->position + buffer->count) 
                                & (BUFFER_SIZE - 1);
     buffer->data[current_position] = byte;
     buffer->count++;
-    
-    if (buffer->count == BUFFER_SIZE)
-        return false;
-    else
-        return true;
+	
+	return (buffer->count == BUFFER_SIZE) ? true : false;
 }
 
 int16_t buffer_pop(struct circular_buffer *buffer)
@@ -47,3 +47,14 @@ int16_t buffer_pop(struct circular_buffer *buffer)
     return byte;
 }
 
+void buffer_clear(struct circular_buffer *buffer)
+{
+	buffer->count = 0;
+}
+
+uint8_t buffer_peek(const struct circular_buffer *buffer)
+{
+    uint8_t current_position = (buffer->position + buffer->count) 
+                               & (BUFFER_SIZE - 1);
+    return buffer->data[current_position] = byte;
+}

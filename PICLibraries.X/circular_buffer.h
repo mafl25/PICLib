@@ -51,4 +51,11 @@ uint8_t buffer_count(const struct circular_buffer *buffer);
  */
 uint8_t buffer_space(const struct circular_buffer *buffer);
 
+/*
+ *
+ */
+void buffer_clear(struct circular_buffer *buffer);
+uint8_t buffer_peek(const struct circular_buffer *buffer);
+
+
 #endif

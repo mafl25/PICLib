@@ -54,6 +54,10 @@ void buffer_clear(struct circular_buffer *buffer)
 
 uint8_t buffer_peek(const struct circular_buffer *buffer)
 {
+    if (buffer->count <= 0) {
+        return -1;
+    }
+    
     uint8_t current_position = (buffer->position + buffer->count) 
                                & (BUFFER_SIZE - 1);
     return buffer->data[current_position];

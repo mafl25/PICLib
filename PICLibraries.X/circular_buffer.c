@@ -52,13 +52,13 @@ void buffer_clear(struct circular_buffer *buffer)
 	buffer->count = 0;
 }
 
-uint8_t buffer_peek(const struct circular_buffer *buffer)
+int16_t buffer_peek(const struct circular_buffer *buffer)
 {
     if (buffer->count <= 0) {
         return -1;
     }
     
-    uint8_t current_position = (buffer->position + buffer->count) 
-                               & (BUFFER_SIZE - 1);
-    return buffer->data[current_position];
+    int16_t byte = (buffer->data[buffer->position]) & 0xFF;
+    
+    return byte;
 }

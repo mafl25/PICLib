@@ -60,7 +60,7 @@ void buffer_clear(struct circular_buffer *buffer);
  * The function "buffer_peek" returns a copy of the next element in the buffer.
  * It will not change the contents of the buffer.
  */
-uint8_t buffer_peek(const struct circular_buffer *buffer);
+int16_t buffer_peek(const struct circular_buffer *buffer);
 
 
 #endif

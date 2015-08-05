@@ -52,61 +52,61 @@ bool spi_slave_peek_receive(bool get_byte, int16_t *byte)
         
     return (SSPSTATbits.BF) ? true : false;
 }
-//
-//void spi_load_buffer(uint8_t byte)
-//{
-//    SSPBUF = byte;
-//}
 
-//int8_t spi_send_data(uint8_t *data, int8_t size, uint8_t *returned_data)
-//{
-//    int8_t i;
-//    uint8_t returned;
-//    
-//    if (size < 0) {
-//        for (i = 0; data[i] != 0; i++) {
-//            returned = spi_send_get_byte(data[i]);
-//            if (returned_data)
-//                returned_data[i] = returned;
-//        }
-//        returned = spi_send_get_byte(dummy_byte);
-//        if (returned_data)
-//                returned_data[i] = returned;
-//    } else {
-//        for (i = 0; i < size; i++) {
-//            returned = spi_send_get_byte(data[i]);
-//            if (returned_data)
-//                returned_data[i] = returned;
-//        }
-//    }
-//    
-//    return i;
-//}
+void spi_load_buffer(uint8_t byte)
+{
+    SSPBUF = byte;
+}
 
-//int8_t spi_master_get_data(uint8_t *data, int8_t size)
-//{
-//    int8_t i;
-//    
-//    if (size < 0) {
-//        for (i = 0; data[i] != 0; i++)
-//            data[i] = spi_send_get_byte(dummy_byte);
-//        data[i] = 0;
-//    } else {
-//        for (i = 0; i < size; i++)
-//            data[i] = spi_send_get_byte(dummy_byte);
-//    }
-//    
-//    return i;
-//}
+int8_t spi_send_data(uint8_t *data, int8_t size, uint8_t *returned_data)
+{
+    int8_t i;
+    uint8_t returned;
+    
+    if (size < 0) {
+        for (i = 0; data[i] != 0; i++) {
+            returned = spi_send_get_byte(data[i]);
+            if (returned_data)
+                returned_data[i] = returned;
+        }
+        returned = spi_send_get_byte(dummy_byte);
+        if (returned_data)
+                returned_data[i] = returned;
+    } else {
+        for (i = 0; i < size; i++) {
+            returned = spi_send_get_byte(data[i]);
+            if (returned_data)
+                returned_data[i] = returned;
+        }
+    }
+    
+    return i;
+}
 
-//void spi_set_dummy_byte(uint8_t byte)
-//{
-//    dummy_byte = byte;
-//}
-//uint8_t spi_get_dummy_byte(void)
-//{
-//    return dummy_byte;
-//}
+int8_t spi_master_get_data(uint8_t *data, int8_t size)
+{
+    int8_t i;
+    
+    if (size < 0) {
+        for (i = 0; data[i] != 0; i++)
+            data[i] = spi_send_get_byte(dummy_byte);
+        data[i] = 0;
+    } else {
+        for (i = 0; i < size; i++)
+            data[i] = spi_send_get_byte(dummy_byte);
+    }
+    
+    return i;
+}
+
+void spi_set_dummy_byte(uint8_t byte)
+{
+    dummy_byte = byte;
+}
+uint8_t spi_get_dummy_byte(void)
+{
+    return dummy_byte;
+}
 
 int16_t spi_slave_get_byte(void)
 {
@@ -119,19 +119,19 @@ int16_t spi_slave_get_byte(void)
     }
     return byte;
 }
-//
-//uint8_t spi_slave_get_data(uint8_t *data, int8_t size)
-//{
-//    int8_t i;
-//    
-//    if (size < 0) {
-//        for (i = 0; data[i] != 0; i++)
-//            data[i] = spi_slave_get_byte();
-//        data[i] = 0;
-//    } else {
-//        for (i = 0; i < size; i++)
-//            data[i] = spi_slave_get_byte();
-//    }
-//    
-//    return i;
-//}
+
+uint8_t spi_slave_get_data(uint8_t *data, int8_t size)
+{
+    int8_t i;
+    
+    if (size < 0) {
+        for (i = 0; data[i] != 0; i++)
+            data[i] = spi_slave_get_byte();
+        data[i] = 0;
+    } else {
+        for (i = 0; i < size; i++)
+            data[i] = spi_slave_get_byte();
+    }
+    
+    return i;
+}
